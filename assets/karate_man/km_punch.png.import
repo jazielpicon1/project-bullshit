@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://m4auvufrlk81"
-path="res://.godot/imported/38b.png-43362b41326ff36e10a58e30e23f57a2.ctex"
+uid="uid://dd4662kgshkew"
+path="res://.godot/imported/km_punch.png-166ec76c7e37b2dbb4082aa16a7f058f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://38b.png"
-dest_files=["res://.godot/imported/38b.png-43362b41326ff36e10a58e30e23f57a2.ctex"]
+source_file="res://assets/karate_man/km_punch.png"
+dest_files=["res://.godot/imported/km_punch.png-166ec76c7e37b2dbb4082aa16a7f058f.ctex"]
 
 [params]
 
