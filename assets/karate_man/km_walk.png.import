@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dd4662kgshkew"
-path="res://.godot/imported/38a.png-74ae724cb19fc8e97ef8f2251a0843e1.ctex"
+uid="uid://by0wti6eqbihy"
+path="res://.godot/imported/km_walk.png-f2d64631f5efb9be44f47867730d0b07.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://38a.png"
-dest_files=["res://.godot/imported/38a.png-74ae724cb19fc8e97ef8f2251a0843e1.ctex"]
+source_file="res://assets/karate_man/km_walk.png"
+dest_files=["res://.godot/imported/km_walk.png-f2d64631f5efb9be44f47867730d0b07.ctex"]
 
 [params]
 
