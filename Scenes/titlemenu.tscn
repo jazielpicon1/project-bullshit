@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dh77a7fjonlog"]
+[gd_scene load_steps=5 format=3 uid="uid://dh77a7fjonlog"]
 
 [ext_resource type="Texture2D" uid="uid://b3qxl435nboo7" path="res://assets/ui/pbs_banner.png" id="1_14grm"]
+[ext_resource type="Shader" uid="uid://o4m2i3x6itu3" path="res://assets/shaders/cascador.gdshader" id="1_36fdp"]
+[ext_resource type="Texture2D" uid="uid://cw24y2iq3uhv8" path="res://assets/ui/background.png" id="1_xgbs3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cqq1g"]
+shader = ExtResource("1_36fdp")
 
 [node name="Titlemenu" type="Control"]
 layout_mode = 3
@@ -9,6 +14,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_cqq1g")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xgbs3")
+stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
