@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://dh77a7fjonlog"]
+[gd_scene load_steps=6 format=3 uid="uid://dh77a7fjonlog"]
 
 [ext_resource type="Texture2D" uid="uid://b3qxl435nboo7" path="res://assets/ui/pbs_banner.png" id="1_14grm"]
 [ext_resource type="Shader" uid="uid://o4m2i3x6itu3" path="res://assets/shaders/cascador.gdshader" id="1_36fdp"]
 [ext_resource type="Texture2D" uid="uid://cw24y2iq3uhv8" path="res://assets/ui/background.png" id="1_xgbs3"]
+[ext_resource type="FontFile" uid="uid://brjiqd3qv04ix" path="res://assets/fonts/RubikMonoOne-Regular.ttf" id="4_cqq1g"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cqq1g"]
 shader = ExtResource("1_36fdp")
@@ -15,14 +16,29 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect2" type="TextureRect" parent="."]
-material = SubResource("ShaderMaterial_cqq1g")
+[node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="ColorRect"]
+material = SubResource("ShaderMaterial_cqq1g")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.017
+anchor_top = -0.03
+anchor_right = 1.028
+anchor_bottom = 1.038
+offset_left = -55.416
+offset_top = -52.56
+offset_right = 186.744
+offset_bottom = 94.3759
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.903, 0.938)
 texture = ExtResource("1_xgbs3")
 stretch_mode = 1
 
@@ -45,14 +61,17 @@ stretch_mode = 4
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.541
-anchor_top = 0.886
-anchor_right = 0.541
-anchor_bottom = 0.886
-offset_left = -554.232
-offset_top = -52.1281
-offset_right = 456.768
-offset_bottom = 43.8719
-theme_override_font_sizes/font_size = 70
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -532.0
+offset_top = -107.0
+offset_right = 532.0
+offset_bottom = -44.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_cqq1g")
+theme_override_font_sizes/font_size = 50
 text = "PRESS ANY BUTTON TO START"
