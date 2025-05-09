@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://wu1sjg5hnx10"]
+[gd_scene load_steps=3 format=3 uid="uid://wu1sjg5hnx10"]
 
 [ext_resource type="Script" uid="uid://bmp2oxnopqjar" path="res://main/main.gd" id="1_53q0u"]
+[ext_resource type="Texture2D" uid="uid://di52eg5ohjdbo" path="res://assets/karate_man/km_stand.png" id="2_pjrb6"]
 
 [node name="Node" type="Node"]
 script = ExtResource("1_53q0u")
@@ -21,3 +22,8 @@ theme_override_font_sizes/font_size = 76
 text = "This is a label"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="KmStand" type="Sprite2D" parent="."]
+position = Vector2(162, 330)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_pjrb6")
