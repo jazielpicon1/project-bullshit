@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://di52eg5ohjdbo"
-path="res://.godot/imported/km_stand.png-58bab0a7b7d644d99e3914b2d2c51a92.ctex"
+uid="uid://b3qxl435nboo7"
+path="res://.godot/imported/pbs_banner.png-85598075c0f9e557a153d388c2f23e01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/karate_man/km_stand.png"
-dest_files=["res://.godot/imported/km_stand.png-58bab0a7b7d644d99e3914b2d2c51a92.ctex"]
+source_file="res://assets/ui/pbs_banner.png"
+dest_files=["res://.godot/imported/pbs_banner.png-85598075c0f9e557a153d388c2f23e01.ctex"]
 
 [params]
 
