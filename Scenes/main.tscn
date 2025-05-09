@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://wu1sjg5hnx10"]
+
+[ext_resource type="Script" uid="uid://bmp2oxnopqjar" path="res://Scripts/main.gd" id="1_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://di52eg5ohjdbo" path="res://assets/karate_man/km_stand.png" id="2_kry3j"]
+[ext_resource type="PackedScene" uid="uid://cwcu54gcbtjdl" path="res://Scenes/player_1.tscn" id="3_8gbba"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_jjvhh")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -247.0
+offset_top = -144.0
+offset_right = 225.0
+offset_bottom = 138.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 76
+text = "This is a label"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="KmStand" type="Sprite2D" parent="."]
+position = Vector2(1000, 330)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_kry3j")
+
+[node name="Player1" parent="." instance=ExtResource("3_8gbba")]
