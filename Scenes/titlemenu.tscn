@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dh77a7fjonlog"]
+[gd_scene load_steps=7 format=3 uid="uid://dh77a7fjonlog"]
 
 [ext_resource type="Texture2D" uid="uid://b3qxl435nboo7" path="res://assets/ui/pbs_banner.png" id="1_14grm"]
 [ext_resource type="Shader" uid="uid://o4m2i3x6itu3" path="res://assets/shaders/cascador.gdshader" id="1_36fdp"]
 [ext_resource type="Texture2D" uid="uid://cw24y2iq3uhv8" path="res://assets/ui/background.png" id="1_xgbs3"]
-[ext_resource type="FontFile" uid="uid://brjiqd3qv04ix" path="res://assets/fonts/RubikMonoOne-Regular.ttf" id="4_cqq1g"]
+[ext_resource type="FontFile" uid="uid://brjiqd3qv04ix" path="res://assets/ui/fonts/RubikMonoOne-Regular.ttf" id="4_cqq1g"]
+[ext_resource type="Theme" uid="uid://cybx8tb4of51l" path="res://assets/ui/default_theme.tres" id="5_e3xc5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cqq1g"]
 shader = ExtResource("1_36fdp")
@@ -17,6 +18,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect" type="ColorRect" parent="."]
+clip_children = 1
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,6 +45,7 @@ texture = ExtResource("1_xgbs3")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -59,7 +62,22 @@ texture = ExtResource("1_14grm")
 expand_mode = 1
 stretch_mode = 4
 
+[node name="demotexture" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0182292
+anchor_top = 0.029321
+anchor_right = 0.521701
+anchor_bottom = 0.533951
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_14grm")
+expand_mode = 1
+stretch_mode = 4
+metadata/_edit_use_anchors_ = true
+
 [node name="Label" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -75,3 +93,51 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("4_cqq1g")
 theme_override_font_sizes/font_size = 50
 text = "PRESS ANY BUTTON TO START"
+
+[node name="MenuBar" type="MenuBar" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0208333
+anchor_top = 0.566358
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_e3xc5")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="MenuBar"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Campaign"
+
+[node name="Label2" type="Label" parent="MenuBar"]
+layout_mode = 0
+offset_top = 52.0
+offset_right = 238.0
+offset_bottom = 96.0
+text = "arcade"
+
+[node name="Label3" type="Label" parent="MenuBar"]
+layout_mode = 0
+offset_top = 104.0
+offset_right = 238.0
+offset_bottom = 148.0
+text = "sandbox"
+
+[node name="Label4" type="Label" parent="MenuBar"]
+layout_mode = 0
+offset_top = 180.0
+offset_right = 238.0
+offset_bottom = 224.0
+theme_override_font_sizes/font_size = 30
+text = "options"
+
+[node name="Label5" type="Label" parent="MenuBar"]
+layout_mode = 0
+offset_top = 226.0
+offset_right = 238.0
+offset_bottom = 270.0
+theme_override_font_sizes/font_size = 30
+text = "quit"
