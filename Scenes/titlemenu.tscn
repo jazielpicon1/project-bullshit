@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dh77a7fjonlog"]
+[gd_scene load_steps=8 format=3 uid="uid://dh77a7fjonlog"]
 
 [ext_resource type="Texture2D" uid="uid://b3qxl435nboo7" path="res://assets/ui/pbs_banner.png" id="1_14grm"]
 [ext_resource type="Shader" uid="uid://o4m2i3x6itu3" path="res://assets/shaders/cascador.gdshader" id="1_36fdp"]
+[ext_resource type="Script" uid="uid://bgwtivevlydij" path="res://Scripts/titlemenu.gd" id="1_dacie"]
 [ext_resource type="Texture2D" uid="uid://cw24y2iq3uhv8" path="res://assets/ui/background.png" id="1_xgbs3"]
 [ext_resource type="FontFile" uid="uid://brjiqd3qv04ix" path="res://assets/ui/fonts/RubikMonoOne-Regular.ttf" id="4_cqq1g"]
 [ext_resource type="Theme" uid="uid://cybx8tb4of51l" path="res://assets/ui/default_theme.tres" id="5_e3xc5"]
@@ -16,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_dacie")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 clip_children = 1
