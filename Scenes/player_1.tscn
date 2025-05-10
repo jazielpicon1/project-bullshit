@@ -65,7 +65,7 @@ position = Vector2(100, 300)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_kfbq2")
 animation = &"kennywalk"
-frame_progress = 0.290542
+frame_progress = 0.99506
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(108.5, 322)
