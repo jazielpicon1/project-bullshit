@@ -7,6 +7,6 @@ func _ready():
 	$Label.text = "Deez Nuts"
 	$Label.modulate = Color.GREEN
 
-func _input(event):
-	if event.is_action_pressed("Walk Foward"):
-		$AnimatedSprite2D.play("Walking")
+#  func _input(event):
+	#if event.is_action_pressed("Walk Foward"):
+		# $AnimatedSprite2D.play("Walking")
