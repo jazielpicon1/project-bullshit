@@ -10,13 +10,13 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfbq2"]
 animations = [{
 "frames": [{
-"duration": 0.3,
+"duration": 1.0,
 "texture": ExtResource("3_aatkl")
 }, {
 "duration": 1.0,
 "texture": ExtResource("3_lp8rx")
 }, {
-"duration": 1.0,
+"duration": 1.2,
 "texture": ExtResource("4_jkush")
 }],
 "loop": true,
@@ -65,8 +65,7 @@ position = Vector2(100, 300)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_kfbq2")
 animation = &"kennywalk"
-frame = 1
-frame_progress = 0.343723
+frame_progress = 0.290542
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(108.5, 322)
