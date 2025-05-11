@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://c8othrpx2ttlo"]
+[gd_scene load_steps=9 format=3 uid="uid://c8othrpx2ttlo"]
 
 [ext_resource type="Texture2D" uid="uid://b3qxl435nboo7" path="res://assets/ui/pbs_banner.png" id="1_14grm"]
 [ext_resource type="Shader" uid="uid://o4m2i3x6itu3" path="res://assets/shaders/cascador.gdshader" id="1_36fdp"]
 [ext_resource type="Script" uid="uid://bgwtivevlydij" path="res://Scripts/titlemenu.gd" id="1_dacie"]
 [ext_resource type="Texture2D" uid="uid://cw24y2iq3uhv8" path="res://assets/ui/background.png" id="1_xgbs3"]
 [ext_resource type="FontFile" uid="uid://brjiqd3qv04ix" path="res://assets/ui/fonts/RubikMonoOne-Regular.ttf" id="4_cqq1g"]
+[ext_resource type="Script" uid="uid://couwre8gbqcx7" path="res://Scripts/dku_scripts.gd" id="5_bsyxc"]
 [ext_resource type="Theme" uid="uid://cybx8tb4of51l" path="res://assets/ui/default_theme.tres" id="5_e3xc5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cqq1g"]
@@ -37,34 +38,45 @@ layout_mode = 2
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="mm_campaign" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
+theme_type_variation = &"FlatButton"
 text = "campaign"
 alignment = 0
 
-[node name="Button2" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="mm_arcade" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "arcade"
+flat = true
 alignment = 0
 
-[node name="Button3" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="mm_sandbox" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = "sandbox"
+flat = true
 alignment = 0
 
-[node name="Button4" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="mm_options" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "options"
+flat = true
 alignment = 0
 
-[node name="Button5" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="mm_quit" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "quit"
+flat = true
 alignment = 0
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="mm_bg" type="ColorRect" parent="."]
+unique_name_in_owner = true
 visible = false
 clip_children = 1
 layout_mode = 1
@@ -74,7 +86,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect2" type="TextureRect" parent="ColorRect"]
+[node name="TextureRect2" type="TextureRect" parent="mm_bg"]
 material = SubResource("ShaderMaterial_cqq1g")
 layout_mode = 1
 anchors_preset = -1
@@ -91,6 +103,13 @@ grow_vertical = 2
 scale = Vector2(0.903, 0.938)
 texture = ExtResource("1_xgbs3")
 stretch_mode = 1
+
+[node name="dku_theretardedway" type="Control" parent="mm_bg"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_bsyxc")
+metadata/_custom_type_script = "uid://couwre8gbqcx7"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
