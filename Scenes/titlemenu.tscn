@@ -129,6 +129,13 @@ texture = ExtResource("1_14grm")
 expand_mode = 1
 stretch_mode = 4
 
+[node name="dku_theretardedway" type="Control" parent="TextureRect"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_bsyxc")
+metadata/_custom_type_script = "uid://couwre8gbqcx7"
+
 [node name="demotexture" type="TextureRect" parent="."]
 visible = false
 layout_mode = 1
