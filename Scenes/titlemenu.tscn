@@ -40,26 +40,32 @@ layout_mode = 2
 [node name="Button" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "campaign"
+alignment = 0
 
 [node name="Button2" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "arcade"
+alignment = 0
 
 [node name="Button3" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 text = "sandbox"
+alignment = 0
 
 [node name="Button4" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "options"
+alignment = 0
 
 [node name="Button5" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "quit"
+alignment = 0
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 clip_children = 1
 layout_mode = 1
 anchors_preset = 15
