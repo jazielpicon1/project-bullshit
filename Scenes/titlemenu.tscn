@@ -20,61 +20,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dacie")
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("5_e3xc5")
-
-[node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-
-[node name="mm_campaign" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_type_variation = &"FlatButton"
-text = "campaign"
-alignment = 0
-
-[node name="mm_arcade" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "arcade"
-flat = true
-alignment = 0
-
-[node name="mm_sandbox" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-text = "sandbox"
-flat = true
-alignment = 0
-
-[node name="mm_options" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "options"
-flat = true
-alignment = 0
-
-[node name="mm_quit" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
-unique_name_in_owner = true
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "quit"
-flat = true
-alignment = 0
-
 [node name="mm_bg" type="ColorRect" parent="."]
 unique_name_in_owner = true
 visible = false
@@ -111,6 +56,62 @@ offset_bottom = 40.0
 script = ExtResource("5_bsyxc")
 metadata/_custom_type_script = "uid://couwre8gbqcx7"
 
+[node name="CenterContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_e3xc5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="mm_campaign" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"FlatButton"
+text = "campaign"
+alignment = 0
+
+[node name="mm_arcade" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "arcade"
+flat = true
+alignment = 0
+
+[node name="mm_sandbox" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "sandbox"
+flat = true
+alignment = 0
+
+[node name="mm_options" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "options"
+flat = true
+alignment = 0
+
+[node name="mm_quit" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "quit"
+flat = true
+alignment = 0
+
 [node name="TextureRect" type="TextureRect" parent="."]
 visible = false
 layout_mode = 1
@@ -128,6 +129,13 @@ grow_vertical = 2
 texture = ExtResource("1_14grm")
 expand_mode = 1
 stretch_mode = 4
+
+[node name="dku_theretardedway" type="Control" parent="TextureRect"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_bsyxc")
+metadata/_custom_type_script = "uid://couwre8gbqcx7"
 
 [node name="demotexture" type="TextureRect" parent="."]
 visible = false
@@ -161,51 +169,3 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("4_cqq1g")
 theme_override_font_sizes/font_size = 50
 text = "PRESS ANY BUTTON TO START"
-
-[node name="MenuBar" type="MenuBar" parent="."]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0208333
-anchor_top = 0.566358
-anchor_right = 0.236979
-anchor_bottom = 0.976852
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("5_e3xc5")
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="MenuBar"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Campaign"
-
-[node name="Label2" type="Label" parent="MenuBar"]
-layout_mode = 0
-offset_top = 52.0
-offset_right = 238.0
-offset_bottom = 96.0
-text = "arcade"
-
-[node name="Label3" type="Label" parent="MenuBar"]
-layout_mode = 0
-offset_top = 104.0
-offset_right = 238.0
-offset_bottom = 148.0
-text = "sandbox"
-
-[node name="Label4" type="Label" parent="MenuBar"]
-layout_mode = 0
-offset_top = 180.0
-offset_right = 238.0
-offset_bottom = 224.0
-theme_override_font_sizes/font_size = 30
-text = "options"
-
-[node name="Label5" type="Label" parent="MenuBar"]
-layout_mode = 0
-offset_top = 226.0
-offset_right = 238.0
-offset_bottom = 270.0
-theme_override_font_sizes/font_size = 30
-text = "quit"
