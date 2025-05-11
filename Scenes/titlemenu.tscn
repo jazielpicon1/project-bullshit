@@ -19,6 +19,46 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_dacie")
 
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_e3xc5")
+
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "campaign"
+
+[node name="Button2" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "arcade"
+
+[node name="Button3" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "sandbox"
+
+[node name="Button4" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "options"
+
+[node name="Button5" type="Button" parent="CenterContainer/MarginContainer/VBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "quit"
+
 [node name="ColorRect" type="ColorRect" parent="."]
 clip_children = 1
 layout_mode = 1
@@ -65,6 +105,7 @@ expand_mode = 1
 stretch_mode = 4
 
 [node name="demotexture" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0182292
@@ -101,8 +142,8 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0208333
 anchor_top = 0.566358
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_right = 0.236979
+anchor_bottom = 0.976852
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_e3xc5")

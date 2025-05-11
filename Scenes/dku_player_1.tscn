@@ -1,11 +1,11 @@
 [gd_scene load_steps=18 format=3 uid="uid://crubc1kwfk1x8"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_od2o3"]
-[ext_resource type="Texture2D" path="res://assets/karate_man/km_jumpstart0001.png" id="2_n1ayy"]
+[ext_resource type="Texture2D" uid="uid://db2lljwi5e1qg" path="res://assets/karate_man/km_jumpstart0001.png" id="2_n1ayy"]
 [ext_resource type="Texture2D" uid="uid://brfgmdmmeuxmo" path="res://assets/karate_man/km_walk.png" id="2_tenro"]
-[ext_resource type="Texture2D" path="res://assets/karate_man/km_jumpstart0002.png" id="3_8xc4i"]
+[ext_resource type="Texture2D" uid="uid://8xchyqiovdb2" path="res://assets/karate_man/km_jumpstart0002.png" id="3_8xc4i"]
 [ext_resource type="Texture2D" uid="uid://cl8yy274gl8b7" path="res://assets/karate_man/38e.png" id="3_ctaj8"]
-[ext_resource type="Texture2D" path="res://assets/karate_man/km_jumpstart0004.png" id="4_g75hv"]
+[ext_resource type="Texture2D" uid="uid://joymccucci8n" path="res://assets/karate_man/km_jumpstart0004.png" id="4_g75hv"]
 [ext_resource type="Texture2D" uid="uid://di026bfwtj4qr" path="res://assets/karate_man/38f.png" id="4_n1ayy"]
 [ext_resource type="Texture2D" uid="uid://di52eg5ohjdbo" path="res://assets/karate_man/km_stand.png" id="5_8xc4i"]
 [ext_resource type="Texture2D" uid="uid://uj2ns7yn1ak5" path="res://assets/karate_man/km_punch.png" id="6_g75hv"]
@@ -119,7 +119,7 @@ position = Vector2(100, 300)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_kfbq2")
 animation = &"newstance"
-frame_progress = 0.12232
+frame_progress = 0.42718
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(108.5, 322)
