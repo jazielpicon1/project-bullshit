@@ -36,15 +36,15 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("2_tenro")
 }, {
-"duration": 1.0,
+"duration": 1.5,
 "texture": ExtResource("3_ctaj8")
 }, {
-"duration": 1.2,
+"duration": 1.0,
 "texture": ExtResource("4_n1ayy")
 }],
 "loop": true,
 "name": &"kennywalk",
-"speed": 6.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 6.0,
@@ -118,8 +118,8 @@ script = ExtResource("1_od2o3")
 position = Vector2(100, 300)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_kfbq2")
-animation = &"punch"
-frame_progress = 0.353325
+animation = &"kennywalk"
+frame_progress = 0.230556
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(108.5, 322)
