@@ -1,11 +1,16 @@
-[gd_scene load_steps=28 format=3 uid="uid://cwcu54gcbtjdl"]
+[gd_scene load_steps=38 format=3 uid="uid://cwcu54gcbtjdl"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_c4k0l"]
+[ext_resource type="Texture2D" uid="uid://bagfh8lyeje5x" path="res://assets/karate_man/km_super-punch0000.png" id="2_kslfe"]
 [ext_resource type="Texture2D" uid="uid://brfgmdmmeuxmo" path="res://assets/karate_man/km_walk.png" id="3_aatkl"]
+[ext_resource type="Texture2D" uid="uid://bnsv6q3qf1sli" path="res://assets/karate_man/km_super-punch0003.png" id="3_k46vw"]
 [ext_resource type="Texture2D" uid="uid://cl8yy274gl8b7" path="res://assets/karate_man/38e.png" id="3_lp8rx"]
 [ext_resource type="Texture2D" uid="uid://di026bfwtj4qr" path="res://assets/karate_man/38f.png" id="4_jkush"]
+[ext_resource type="Texture2D" uid="uid://ua78wiqyog55" path="res://assets/karate_man/km_super-punch0004.png" id="4_xg3ne"]
 [ext_resource type="Texture2D" uid="uid://1vnjwpcorgmi" path="res://assets/karate_man/km_punch0000.png" id="5_2ympu"]
+[ext_resource type="Texture2D" uid="uid://dpuod15hy1sey" path="res://assets/karate_man/km_super-punch0006.png" id="5_tyugg"]
 [ext_resource type="Texture2D" uid="uid://6ysvfbtvu1bx" path="res://assets/karate_man/km_punch0002.png" id="6_1fs8r"]
+[ext_resource type="Texture2D" uid="uid://byi6gyrqp1h5s" path="res://assets/karate_man/km_super-punch0007.png" id="6_q1mvt"]
 [ext_resource type="Texture2D" uid="uid://cwl465o1b7b50" path="res://assets/karate_man/km_stance0000.png" id="7_mndha"]
 [ext_resource type="Texture2D" uid="uid://5x7qi70kjgly" path="res://assets/karate_man/km_punch0003.png" id="7_s4j3i"]
 [ext_resource type="Texture2D" uid="uid://7uovh6twq5gl" path="res://assets/karate_man/km_stance0009.png" id="8_2ympu"]
@@ -13,6 +18,26 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfbq2"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kslfe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k46vw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xg3ne")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tyugg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_q1mvt")
+}],
+"loop": true,
+"name": &"heavy punch",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_aatkl")
@@ -89,6 +114,35 @@ tracks/1/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jkush"]
 _data = {
 &"RESET": SubResource("Animation_lp8rx")
+}
+
+[sub_resource type="Animation" id="Animation_qrwht"]
+resource_name = "heavy_punch"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.198338, 0.297507, 0.399825),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"heavy punch", &"heavy punch", &"heavy punch", &"heavy punch", &"heavy punch"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.199912, 0.297507, 0.399825),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
 }
 
 [sub_resource type="Animation" id="Animation_jkush"]
@@ -179,10 +233,14 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mndha"]
 _data = {
+&"heavy punch": SubResource("Animation_qrwht"),
 &"light punch": SubResource("Animation_jkush"),
 &"standing": SubResource("Animation_mndha"),
 &"walking": SubResource("Animation_vmi10")
 }
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kslfe"]
+animation = &"Karate Man animations/heavy punch"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lp8rx"]
 animation = &"Karate Man animations/light punch"
@@ -206,7 +264,18 @@ break_loop_at_end = true
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_k46vw"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xg3ne"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tyugg"]
+break_loop_at_end = true
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qrwht"]
+"states/Karate Man animations_heavy punch/node" = SubResource("AnimationNodeAnimation_kslfe")
+"states/Karate Man animations_heavy punch/position" = Vector2(427.092, 257)
 "states/Karate Man animations_light_punch/node" = SubResource("AnimationNodeAnimation_lp8rx")
 "states/Karate Man animations_light_punch/position" = Vector2(223, 181)
 "states/Karate Man animations_standing/node" = SubResource("AnimationNodeAnimation_jkush")
@@ -214,7 +283,8 @@ advance_mode = 2
 "states/Karate Man animations_walking/node" = SubResource("AnimationNodeAnimation_vmi10")
 "states/Karate Man animations_walking/position" = Vector2(634, 129)
 states/Start/position = Vector2(109, 73)
-transitions = ["Karate Man animations_standing", "Karate Man animations_walking", SubResource("AnimationNodeStateMachineTransition_mndha"), "Karate Man animations_walking", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_2ympu"), "Karate Man animations_standing", "Karate Man animations_light_punch", SubResource("AnimationNodeStateMachineTransition_1fs8r"), "Karate Man animations_walking", "Karate Man animations_light_punch", SubResource("AnimationNodeStateMachineTransition_s4j3i"), "Karate Man animations_light_punch", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_et7db")]
+transitions = ["Karate Man animations_standing", "Karate Man animations_walking", SubResource("AnimationNodeStateMachineTransition_mndha"), "Karate Man animations_walking", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_2ympu"), "Karate Man animations_standing", "Karate Man animations_light_punch", SubResource("AnimationNodeStateMachineTransition_1fs8r"), "Karate Man animations_walking", "Karate Man animations_light_punch", SubResource("AnimationNodeStateMachineTransition_s4j3i"), "Karate Man animations_light_punch", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_et7db"), "Karate Man animations_walking", "Karate Man animations_heavy punch", SubResource("AnimationNodeStateMachineTransition_k46vw"), "Karate Man animations_standing", "Karate Man animations_heavy punch", SubResource("AnimationNodeStateMachineTransition_xg3ne"), "Karate Man animations_heavy punch", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_tyugg")]
+graph_offset = Vector2(-115.908, 32.6749)
 
 [node name="Player1" type="CharacterBody2D"]
 script = ExtResource("1_c4k0l")

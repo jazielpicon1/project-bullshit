@@ -10,8 +10,11 @@ func _ready():
 func get_input():
 	var current = state_machine.get_current_node()
 	velocity = Vector2.ZERO
-	if Input.is_action_just_pressed("Basic Attack punch"):
+	if Input.is_action_just_pressed("Light Punch"):
 		state_machine.travel("Karate Man animations_light_punch")
+		return
+	if Input.is_action_just_pressed("Heavy Punch"):
+		state_machine.travel("Karate Man animations_heavy punch")
 		return
 	if Input.is_action_pressed("Walk Foward"):
 		velocity.x += 1
