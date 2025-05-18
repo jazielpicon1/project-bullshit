@@ -16,6 +16,9 @@ func get_input():
 	if Input.is_action_just_pressed("Heavy Punch"):
 		state_machine.travel("Karate Man animations_heavy punch")
 		return
+	if Input.is_action_just_pressed("Light Kick"):
+		state_machine.travel("Karate Man animations_light kick")
+		return
 	if Input.is_action_pressed("Walk Foward"):
 		velocity.x += 1
 		$AnimatedSprite2D.scale.x = -0.2
