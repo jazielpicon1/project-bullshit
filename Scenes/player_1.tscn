@@ -1,20 +1,29 @@
-[gd_scene load_steps=50 format=3 uid="uid://cwcu54gcbtjdl"]
+[gd_scene load_steps=59 format=3 uid="uid://cwcu54gcbtjdl"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_c4k0l"]
 [ext_resource type="Texture2D" uid="uid://bagfh8lyeje5x" path="res://assets/karate_man/km_super-punch0000.png" id="2_kslfe"]
+[ext_resource type="Texture2D" uid="uid://cw3d6mvyc0blf" path="res://assets/karate_man/km_heavy-kick0000.png" id="2_vadkl"]
 [ext_resource type="Texture2D" uid="uid://brfgmdmmeuxmo" path="res://assets/karate_man/km_walk.png" id="3_aatkl"]
+[ext_resource type="Texture2D" uid="uid://77lsap5aue4a" path="res://assets/karate_man/km_heavy-kick0001.png" id="3_bkimo"]
 [ext_resource type="Texture2D" uid="uid://bnsv6q3qf1sli" path="res://assets/karate_man/km_super-punch0003.png" id="3_k46vw"]
 [ext_resource type="Texture2D" uid="uid://cl8yy274gl8b7" path="res://assets/karate_man/38e.png" id="3_lp8rx"]
 [ext_resource type="Texture2D" uid="uid://di026bfwtj4qr" path="res://assets/karate_man/38f.png" id="4_jkush"]
 [ext_resource type="Texture2D" uid="uid://ua78wiqyog55" path="res://assets/karate_man/km_super-punch0004.png" id="4_xg3ne"]
+[ext_resource type="Texture2D" uid="uid://3rr0b41yaa2g" path="res://assets/karate_man/km_heavy-kick0003.png" id="4_yt1lk"]
 [ext_resource type="Texture2D" uid="uid://1vnjwpcorgmi" path="res://assets/karate_man/km_punch0000.png" id="5_2ympu"]
+[ext_resource type="Texture2D" uid="uid://dq8chhyysqtoc" path="res://assets/karate_man/km_heavy-kick0004.png" id="5_gepg7"]
 [ext_resource type="Texture2D" uid="uid://dpuod15hy1sey" path="res://assets/karate_man/km_super-punch0006.png" id="5_tyugg"]
 [ext_resource type="Texture2D" uid="uid://6ysvfbtvu1bx" path="res://assets/karate_man/km_punch0002.png" id="6_1fs8r"]
+[ext_resource type="Texture2D" uid="uid://bmvkvaaymvgap" path="res://assets/karate_man/km_heavy-kick0005.png" id="6_lctyb"]
 [ext_resource type="Texture2D" uid="uid://byi6gyrqp1h5s" path="res://assets/karate_man/km_super-punch0007.png" id="6_q1mvt"]
 [ext_resource type="Texture2D" uid="uid://cwl465o1b7b50" path="res://assets/karate_man/km_stance0000.png" id="7_mndha"]
+[ext_resource type="Texture2D" uid="uid://d3llt8weptlyy" path="res://assets/karate_man/km_heavy-kick0007.png" id="7_s1db0"]
 [ext_resource type="Texture2D" uid="uid://5x7qi70kjgly" path="res://assets/karate_man/km_punch0003.png" id="7_s4j3i"]
 [ext_resource type="Texture2D" uid="uid://7uovh6twq5gl" path="res://assets/karate_man/km_stance0009.png" id="8_2ympu"]
+[ext_resource type="Texture2D" uid="uid://bpg28fgf4gwkm" path="res://assets/karate_man/km_heavy-kick0008.png" id="8_5fqwb"]
 [ext_resource type="Texture2D" uid="uid://bavkjyqdx47s6" path="res://assets/karate_man/km_stance0010.png" id="9_1fs8r"]
+[ext_resource type="Texture2D" uid="uid://36gqka2723ch" path="res://assets/karate_man/km_heavy-kick0010.png" id="9_ty4o1"]
+[ext_resource type="Texture2D" uid="uid://mmtednhv28wi" path="res://assets/karate_man/km_heavy-kick0012.png" id="10_305br"]
 [ext_resource type="Texture2D" uid="uid://b26jiyf6x72pn" path="res://assets/karate_man/km_normal-kick0000.png" id="10_dbliy"]
 [ext_resource type="Texture2D" uid="uid://d01tp3qnphmgy" path="res://assets/karate_man/km_normal-kick0001.png" id="11_ccce5"]
 [ext_resource type="Texture2D" uid="uid://b3himqorlscjv" path="res://assets/karate_man/km_normal-kick0002.png" id="12_ex6al"]
@@ -24,6 +33,38 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfbq2"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vadkl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bkimo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yt1lk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gepg7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_lctyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_s1db0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5fqwb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ty4o1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_305br")
+}],
+"loop": true,
+"name": &"heavy kick",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 0.51,
 "texture": ExtResource("2_kslfe")
@@ -144,9 +185,6 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_lp8rx")
 }
-
-[sub_resource type="Animation" id="Animation_dbliy"]
-resource_name = "fuckwumbo?"
 
 [sub_resource type="Animation" id="Animation_qrwht"]
 resource_name = "heavy_punch"
@@ -296,9 +334,12 @@ tracks/1/keys = {
 "values": [0, 1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_dbliy"]
+resource_name = "heavy kick"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mndha"]
 _data = {
-&"fuckwumbo?": SubResource("Animation_dbliy"),
+&"heavy kick": SubResource("Animation_dbliy"),
 &"heavy punch": SubResource("Animation_qrwht"),
 &"light kick": SubResource("Animation_uotsj"),
 &"light punch": SubResource("Animation_jkush"),
