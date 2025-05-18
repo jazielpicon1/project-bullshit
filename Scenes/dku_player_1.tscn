@@ -172,9 +172,9 @@ script = ExtResource("1_od2o3")
 position = Vector2(100, 300)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_kfbq2")
-animation = &"heavypunch"
-frame = 2
-frame_progress = 0.575797
+animation = &"punch"
+frame = 1
+frame_progress = 0.455635
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(108.5, 322)
