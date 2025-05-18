@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cwcu54gcbtjdl"]
+[gd_scene load_steps=50 format=3 uid="uid://cwcu54gcbtjdl"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_c4k0l"]
 [ext_resource type="Texture2D" uid="uid://bagfh8lyeje5x" path="res://assets/karate_man/km_super-punch0000.png" id="2_kslfe"]
@@ -197,7 +197,7 @@ tracks/1/path = NodePath("../AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.133333, 0.2, 0.233333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3, 4, 5]
@@ -289,8 +289,12 @@ tracks/1/keys = {
 "values": [0, 1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_dbliy"]
+resource_name = "fuckwumbo?"
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mndha"]
 _data = {
+&"fuckwumbo?": SubResource("Animation_dbliy"),
 &"heavy punch": SubResource("Animation_qrwht"),
 &"light kick": SubResource("Animation_uotsj"),
 &"light punch": SubResource("Animation_jkush"),
