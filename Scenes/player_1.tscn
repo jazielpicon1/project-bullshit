@@ -25,16 +25,16 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfbq2"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 0.51,
 "texture": ExtResource("2_kslfe")
 }, {
-"duration": 1.0,
+"duration": 0.2,
 "texture": ExtResource("3_k46vw")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("4_xg3ne")
 }, {
-"duration": 1.0,
+"duration": 0.5,
 "texture": ExtResource("5_tyugg")
 }, {
 "duration": 1.0,
@@ -144,6 +144,9 @@ tracks/1/keys = {
 _data = {
 &"RESET": SubResource("Animation_lp8rx")
 }
+
+[sub_resource type="Animation" id="Animation_dbliy"]
+resource_name = "fuckwumbo?"
 
 [sub_resource type="Animation" id="Animation_qrwht"]
 resource_name = "heavy_punch"
@@ -288,9 +291,6 @@ tracks/1/keys = {
 "update": 1,
 "values": [0, 1, 2]
 }
-
-[sub_resource type="Animation" id="Animation_dbliy"]
-resource_name = "fuckwumbo?"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mndha"]
 _data = {
