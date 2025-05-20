@@ -1,7 +1,24 @@
+class_name Player1
 extends CharacterBody2D
 
+#@onready var state_machine: StateMachine = $"StateMachine"
+#@onready var animation : AnimationPlayer = $AnimationPlayer
+#
+#func _ready(): state_machine.init()
+#
+#func _process(delta): state_machine.process_frame(delta)
+#
+#func _physics_process(delta): state_machine.process_physics(delta)
+#
+#func _input(event): state_machine.process_input(event)
+
+
 var state_machine
-var max_speed = 100
+const MAX_SPEED = 200.0
+const JUMP_VELOCITY = -800.0
+
+# Gets the default velocity of gravity from the project settings (980 px/s^2)
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var last_direction := Vector2(1,0)
 
 
@@ -19,7 +36,7 @@ func get_input():
 	if Input.is_action_just_pressed("Light Kick"):
 		state_machine.travel("Karate Man animations_light kick")
 		return
-	if Input.is_action_pressed("Walk Foward"):
+	if Input.is_action_pressed("Walk Forward"):
 		velocity.x += 1
 		$AnimatedSprite2D.scale.x = -0.2
 	if Input.is_action_pressed("Walk Backwards"):
@@ -29,46 +46,50 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed("Crouch"):
 		velocity.y -= 1
-	velocity.normalized() * max_speed
+	velocity.normalized() * MAX_SPEED
 	if velocity.length() == 0:
 		state_machine.travel("Karate Man animations_standing")
 	if velocity.length() > 0:
 		state_machine.travel("Karate Man animations_walking")
 	
 func _physics_process(delta):
-	get_input()
-	var direction = Input.get_vector("Walk Backwards","Walk Foward", "Jump", "Crouch")
-	velocity = direction * max_speed
+	#Adds gravity to the characters
+	#get_input()
+	if not is_on_floor():
+		velocity.y += gravity * delta
 	
 	
-	if direction.length() > 0:
-		last_direction = direction
-		play_movement_animation(direction)
+	#Handles the movement and direction of the character
+	var direction = Input.get_axis("Walk Backwards","Walk Forward")
+	if direction:
+		velocity.x = direction * MAX_SPEED
 	else:
-		play_idle_animation(last_direction)
-	move_and_slide()
-	
+		velocity.x = move_toward(velocity.x, 0, MAX_SPEED)
+	#
+	#Handles the jump animation.
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		
+#
+		
+#
+	#
 	#if direction.length() > 0:
-	#	last_direction = direction
-	#	play_movement_animation(direction)
+		#last_direction = direction
+		#play_movement_animation(direction)
 	#else:
-	#	play_idle_animation(last_direction)
-		
-func play_movement_animation(direction):
-	if direction.x > 0:
-		$AnimatedSprite2D.play("kennywalk")
-	elif direction.x < 0:
-		$AnimatedSprite2D.play("kennywalk")
-		
-func play_idle_animation(direction):
-	if direction.x > 0:
-		$AnimatedSprite2D.play("standing")
-	elif direction.x < 0:
-		$AnimatedSprite2D.play("standing")
-
-#func _input(event):
-	#if event.is_action_pressed("Basic Attack punch"):
-	#	$AnimatedSprite2D.play("punching")
-	
-	#if event.is_action_pressed("Walk Foward"):
-	#	$AnimatedSprite2D.play("kennywalk")
+		#play_idle_animation(last_direction)
+	move_and_slide()
+	#
+#
+#func play_movement_animation(direction):
+	#if direction.x > 0:
+		#$AnimatedSprite2D.play("kennywalk")
+	#elif direction.x < 0:
+		#$AnimatedSprite2D.play("kennywalk")
+		#
+#func play_idle_animation(direction):
+	#if direction.x > 0:
+		#$AnimatedSprite2D.play("standing")
+	#elif direction.x < 0:
+		#$AnimatedSprite2D.play("standing")
