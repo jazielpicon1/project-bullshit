@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://cwcu54gcbtjdl"]
+[gd_scene load_steps=77 format=3 uid="uid://cwcu54gcbtjdl"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_c4k0l"]
 [ext_resource type="Texture2D" uid="uid://bagfh8lyeje5x" path="res://assets/karate_man/km_super-punch0000.png" id="2_kslfe"]
@@ -33,6 +33,11 @@
 [ext_resource type="Texture2D" uid="uid://db2lljwi5e1qg" path="res://assets/karate_man/km_jumpstart0001.png" id="16_gepg7"]
 [ext_resource type="Texture2D" uid="uid://8xchyqiovdb2" path="res://assets/karate_man/km_jumpstart0002.png" id="17_lctyb"]
 [ext_resource type="Texture2D" uid="uid://joymccucci8n" path="res://assets/karate_man/km_jumpstart0004.png" id="18_s1db0"]
+[ext_resource type="Texture2D" uid="uid://cjj2vuh264mv1" path="res://assets/karate_man/km_light-kick0000.png" id="28_41bo0"]
+[ext_resource type="Texture2D" uid="uid://dg31ln0d24ipo" path="res://assets/karate_man/km_light-kick0001.png" id="29_h8d83"]
+[ext_resource type="Texture2D" uid="uid://bkyg0gif8wth0" path="res://assets/karate_man/km_light-kick0002.png" id="30_5xydj"]
+[ext_resource type="Texture2D" uid="uid://mj26xii03ot7" path="res://assets/karate_man/km_light-kick0004.png" id="31_ewrxp"]
+[ext_resource type="Texture2D" uid="uid://8biewu7tmrtb" path="res://assets/karate_man/km_light-kick0005.png" id="32_m77ku"]
 [ext_resource type="Animation" uid="uid://02b5ijhscgeg" path="res://assets/karate_man/standing.res" id="34_ty4o1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfbq2"]
@@ -138,6 +143,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"light kick",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28_41bo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_h8d83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_5xydj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_ewrxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_m77ku")
+}],
+"loop": true,
+"name": &"light kick again",
 "speed": 5.0
 }, {
 "frames": [{
@@ -292,36 +317,6 @@ tracks/1/keys = {
 "values": [0, 1, 2]
 }
 
-[sub_resource type="Animation" id="Animation_uotsj"]
-resource_name = "light kick"
-length = 0.6
-loop_mode = 1
-step = 0.0416667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.333333, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [&"light kick", &"light kick", &"light kick", &"light kick", &"light kick", &"light kick"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.166667, 0.208333, 0.333333),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
 [sub_resource type="Animation" id="Animation_jkush"]
 resource_name = "punching"
 length = 0.3
@@ -381,13 +376,72 @@ tracks/1/keys = {
 "values": [0, 1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_uotsj"]
+resource_name = "normal kick"
+length = 0.6
+loop_mode = 1
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.333333, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [&"light kick", &"light kick", &"light kick", &"light kick", &"light kick", &"light kick"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.0833333, 0.166667, 0.208333, 0.333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_41bo0"]
+resource_name = "light kick"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"light kick again"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0416667, 0.0833333, 0.125, 0.208333, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mndha"]
 _data = {
 &"heavy kick": SubResource("Animation_dbliy"),
 &"heavy punch": SubResource("Animation_qrwht"),
 &"jump": SubResource("Animation_5fqwb"),
-&"light kick": SubResource("Animation_uotsj"),
+&"light kick": SubResource("Animation_41bo0"),
 &"light punch": SubResource("Animation_jkush"),
+&"normal kick": SubResource("Animation_uotsj"),
 &"standing": ExtResource("34_ty4o1"),
 &"walking": SubResource("Animation_vmi10")
 }
