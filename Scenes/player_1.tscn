@@ -232,6 +232,7 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_dbliy"]
 resource_name = "heavy kick"
+length = 0.541671
 step = 0.0416667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -317,6 +318,35 @@ tracks/1/keys = {
 "values": [0, 1, 2]
 }
 
+[sub_resource type="Animation" id="Animation_41bo0"]
+resource_name = "light kick"
+length = 0.291671
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"light kick again"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0416667, 0.0833333, 0.125, 0.208333, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
 [sub_resource type="Animation" id="Animation_jkush"]
 resource_name = "punching"
 length = 0.3
@@ -345,35 +375,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [&"light punch", &"light punch", &"light punch"]
-}
-
-[sub_resource type="Animation" id="Animation_vmi10"]
-length = 0.5
-loop_mode = 1
-step = 0.0416667
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"kennywalk"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.166667, 0.291667),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [0, 1, 2]
 }
 
 [sub_resource type="Animation" id="Animation_uotsj"]
@@ -406,8 +407,9 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4, 5]
 }
 
-[sub_resource type="Animation" id="Animation_41bo0"]
-resource_name = "light kick"
+[sub_resource type="Animation" id="Animation_vmi10"]
+length = 0.5
+loop_mode = 1
 step = 0.0416667
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -419,7 +421,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"light kick again"]
+"values": [&"kennywalk"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -428,10 +430,10 @@ tracks/1/path = NodePath("../AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0416667, 0.0833333, 0.125, 0.208333, 0.25),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.166667, 0.291667),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4]
+"values": [0, 1, 2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mndha"]
@@ -531,7 +533,7 @@ advance_mode = 2
 "states/Karate Man animations_walking/position" = Vector2(634, 129)
 states/Start/position = Vector2(109, 73)
 transitions = ["Karate Man animations_standing", "Karate Man animations_walking", SubResource("AnimationNodeStateMachineTransition_mndha"), "Karate Man animations_walking", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_2ympu"), "Karate Man animations_standing", "Karate Man animations_light_punch", SubResource("AnimationNodeStateMachineTransition_1fs8r"), "Karate Man animations_walking", "Karate Man animations_light_punch", SubResource("AnimationNodeStateMachineTransition_s4j3i"), "Karate Man animations_light_punch", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_et7db"), "Karate Man animations_walking", "Karate Man animations_heavy punch", SubResource("AnimationNodeStateMachineTransition_k46vw"), "Karate Man animations_standing", "Karate Man animations_heavy punch", SubResource("AnimationNodeStateMachineTransition_xg3ne"), "Karate Man animations_heavy punch", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_tyugg"), "Karate Man animations_walking", "Karate Man animations_light kick", SubResource("AnimationNodeStateMachineTransition_hsg2c"), "Karate Man animations_standing", "Karate Man animations_light kick", SubResource("AnimationNodeStateMachineTransition_vadkl"), "Karate Man animations_light kick", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_bkimo"), "Karate Man animations_standing", "Karate Man animations_jump", SubResource("AnimationNodeStateMachineTransition_lctyb"), "Karate Man animations_jump", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_s1db0"), "Karate Man animations_walking", "Karate Man animations_jump", SubResource("AnimationNodeStateMachineTransition_5fqwb"), "Karate Man animations_walking", "Karate Man animations_heavy kick", SubResource("AnimationNodeStateMachineTransition_ty4o1"), "Karate Man animations_standing", "Karate Man animations_heavy kick", SubResource("AnimationNodeStateMachineTransition_305br"), "Karate Man animations_heavy kick", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_41bo0")]
-graph_offset = Vector2(-115.908, -250.114)
+graph_offset = Vector2(-115.908, -32.3362)
 
 [node name="Player1" type="CharacterBody2D" groups=["Player1", "States"]]
 script = ExtResource("1_c4k0l")

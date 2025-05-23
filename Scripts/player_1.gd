@@ -15,22 +15,26 @@ extends CharacterBody2D
 
 var state_machine
 @export var maxSpeed : float = 200.0
-@export var jumpVelocity : float = -400.0
+@export var jumpVelocity : float = -500.0
 
 # Gets the default velocity of gravity from the project settings (980 px/s^2)
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var animation_locked : bool = false
+var attack_animation : bool = false
 var direction : Vector2 = Vector2.ZERO
 var last_direction := Vector2(1,0)
 
-
+#sets state machine with the animations from the animation tree
 func _ready():
 	state_machine = $AnimationTree.get("parameters/playback")
+
+#Gets input from the user and plays the according animation
 func get_input():
 	var current = state_machine.get_current_node()
 	update_animation()
 	update_facing_direction()
 	if Input.is_action_just_pressed("Light Punch"):
+		attack_animation = true
 		state_machine.travel("Karate Man animations_light_punch")
 		return
 	if Input.is_action_just_pressed("Heavy Punch"):
@@ -38,6 +42,7 @@ func get_input():
 		return
 	if Input.is_action_just_pressed("Light Kick"):
 		state_machine.travel("Karate Man animations_light kick")
+		return
 	if Input.is_action_just_pressed("Heavy Kick"):
 		state_machine.travel("Karate Man animations_heavy kick")
 		return
@@ -83,4 +88,7 @@ func jump():
 #func land():
 	#state_machine.travel("Karate Man animations_jump end")
 	
+func stop_motion():
+	if attack_animation:
+		velocity.x = 0
 	
