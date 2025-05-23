@@ -38,6 +38,8 @@ func get_input():
 		return
 	if Input.is_action_just_pressed("Light Kick"):
 		state_machine.travel("Karate Man animations_light kick")
+	if Input.is_action_just_pressed("Heavy Kick"):
+		state_machine.travel("Karate Man animations_heavy kick")
 		return
 	
 func _physics_process(delta):
