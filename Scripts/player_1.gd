@@ -77,3 +77,8 @@ func jump():
 	velocity.y = jumpVelocity
 	state_machine.travel("Karate Man animations_jump")
 	animation_locked = true
+	
+#func land():
+	#state_machine.travel("Karate Man animations_jump end")
+	
+	
