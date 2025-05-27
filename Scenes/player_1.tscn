@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://cwcu54gcbtjdl"]
+[gd_scene load_steps=78 format=3 uid="uid://cwcu54gcbtjdl"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_c4k0l"]
 [ext_resource type="Texture2D" uid="uid://bagfh8lyeje5x" path="res://assets/karate_man/km_super-punch0000.png" id="2_kslfe"]
@@ -42,6 +42,14 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfbq2"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_s1db0")
+}],
+"loop": true,
+"name": &"fall",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_vadkl")
@@ -224,9 +232,37 @@ tracks/1/keys = {
 "values": [&"standing"]
 }
 
+[sub_resource type="Animation" id="Animation_h8d83"]
+resource_name = "fall"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"fall"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jkush"]
 _data = {
 &"RESET": SubResource("Animation_lp8rx"),
+&"fall": SubResource("Animation_h8d83"),
 &"standing": ExtResource("34_ty4o1")
 }
 
