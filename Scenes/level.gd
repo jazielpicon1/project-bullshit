@@ -1,0 +1,1 @@
+extends WorldBoundaryShape2D
