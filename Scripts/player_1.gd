@@ -92,7 +92,7 @@ func _physics_process(delta):
 
 func update_animation():
 	if not animation_locked:
-		if direction.x != 0 && state_machine.get_current_node() != "Karate Man animations_jump-fall":
+		if direction.x != 0 && state_machine.get_current_node() != "Karate Man animations_jump-fall": 
 			state_machine.travel("Karate Man animations_walking")
 		else:
 			state_machine.travel("Karate Man animations_standing")
@@ -105,11 +105,11 @@ func update_facing_direction():
 		
 func jump():
 	velocity.y = jumpVelocity
-	state_machine.travel("Karate Man animations_jump-start")
+	state_machine.travel("Karate Man animations_jump")
 	animation_locked = true
 	
 func land():
-	state_machine.travel("Karate Man animations_jump-fall")
+	state_machine.travel("Karate Man animations_jump-fall") 
 	animation_locked = true
 	
 func stop_motion():
