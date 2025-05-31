@@ -35,24 +35,24 @@ func get_input():
 	update_animation()
 	update_facing_direction()
 	if Input.is_action_just_pressed("Light Punch"):
+		state_machine.travel("Karate Man animations_light_punch")
 		attack_animation = true
 		stop_motion()
-		state_machine.travel("Karate Man animations_light_punch")
 		return
 	if Input.is_action_just_pressed("Heavy Punch"):
+		state_machine.travel("Karate Man animations_heavy punch")
 		attack_animation = true
 		stop_motion()
-		state_machine.travel("Karate Man animations_heavy punch")
 		return
 	if Input.is_action_just_pressed("Light Kick"):
+		state_machine.travel("Karate Man animations_light kick")
 		attack_animation = true
 		stop_motion()
-		state_machine.travel("Karate Man animations_light kick")
 		return
 	if Input.is_action_just_pressed("Heavy Kick"):
+		state_machine.travel("Karate Man animations_heavy kick")
 		attack_animation = true
 		stop_motion()
-		state_machine.travel("Karate Man animations_heavy kick")
 		return
 	
 func _physics_process(delta):
