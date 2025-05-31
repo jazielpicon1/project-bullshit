@@ -6283,3 +6283,5 @@ zoom = Vector2(0.82, 0.63)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 rotation = 1.5708
 shape = SubResource("WorldBoundaryShape2D_k5f4k")
+
+[connection signal="tree_exited" from="." to="Player1" method="_on_level_tree_exited"]

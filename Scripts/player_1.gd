@@ -23,6 +23,7 @@ var animation_locked : bool = false
 var attack_animation : bool = false
 var direction : Vector2 = Vector2.ZERO
 var last_direction := Vector2(1,0)
+var was_in_air : bool = false
 
 #sets state machine with the animations from the animation tree
 func _ready():
@@ -57,8 +58,15 @@ func get_input():
 	
 func _physics_process(delta):
 	#Adds gravity to the characters
+	animation_finished()
 	if not is_on_floor():
 		velocity.y += gravity * delta
+		was_in_air = true
+		
+	if was_in_air == true:
+		land()
+		
+	was_in_air = false
 	
 	#Handles the movement and direction of the character
 	direction = Input.get_vector("Walk Backwards","Walk Forward", "Crouch","Jump")
@@ -72,9 +80,10 @@ func _physics_process(delta):
 	
 	#Handles the jump animation.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
+		#was_in_air = true
 		jump()
 	
-	
+	#Resumes movement after attack animation is finished
 	if Input.is_action_just_released("Attack Button"):
 		resume_motion()
 
@@ -83,7 +92,7 @@ func _physics_process(delta):
 
 func update_animation():
 	if not animation_locked:
-		if direction != Vector2.ZERO:
+		if direction.x != 0 && state_machine.get_current_node() != "Karate Man animations_jump-fall":
 			state_machine.travel("Karate Man animations_walking")
 		else:
 			state_machine.travel("Karate Man animations_standing")
@@ -96,11 +105,12 @@ func update_facing_direction():
 		
 func jump():
 	velocity.y = jumpVelocity
-	state_machine.travel("Karate Man animations_jump")
+	state_machine.travel("Karate Man animations_jump-start")
 	animation_locked = true
 	
-#func land():
-	#state_machine.travel("Karate Man animations_jump end")
+func land():
+	state_machine.travel("Karate Man animations_jump-fall")
+	animation_locked = true
 	
 func stop_motion():
 	if attack_animation:
@@ -113,3 +123,9 @@ func resume_motion():
 	else:
 		velocity.x = move_toward(velocity.x, 0, maxSpeed)
 	
+
+
+func animation_finished():
+	var tempCurrent = state_machine.get_current_node()
+	if tempCurrent == "Karate Man animations_jump-fall":
+		animation_locked = false
