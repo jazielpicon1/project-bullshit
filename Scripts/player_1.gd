@@ -31,19 +31,27 @@ func _ready():
 #Gets input from the user and plays the according animation
 func get_input():
 	var current = state_machine.get_current_node()
+	
 	update_animation()
 	update_facing_direction()
 	if Input.is_action_just_pressed("Light Punch"):
 		attack_animation = true
+		stop_motion()
 		state_machine.travel("Karate Man animations_light_punch")
 		return
 	if Input.is_action_just_pressed("Heavy Punch"):
+		attack_animation = true
+		stop_motion()
 		state_machine.travel("Karate Man animations_heavy punch")
 		return
 	if Input.is_action_just_pressed("Light Kick"):
+		attack_animation = true
+		stop_motion()
 		state_machine.travel("Karate Man animations_light kick")
 		return
 	if Input.is_action_just_pressed("Heavy Kick"):
+		attack_animation = true
+		stop_motion()
 		state_machine.travel("Karate Man animations_heavy kick")
 		return
 	
@@ -55,14 +63,20 @@ func _physics_process(delta):
 	#Handles the movement and direction of the character
 	direction = Input.get_vector("Walk Backwards","Walk Forward", "Crouch","Jump")
 	
-	if direction:
-		velocity.x = direction.x * maxSpeed
-	else:
-		velocity.x = move_toward(velocity.x, 0, maxSpeed)
+	
+	if not attack_animation:
+		if direction:
+			velocity.x = direction.x * maxSpeed
+		else:
+			velocity.x = move_toward(velocity.x, 0, maxSpeed)
 	
 	#Handles the jump animation.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		jump()
+	
+	
+	if Input.is_action_just_released("Attack Button"):
+		resume_motion()
 
 	get_input()
 	move_and_slide()
@@ -91,4 +105,11 @@ func jump():
 func stop_motion():
 	if attack_animation:
 		velocity.x = 0
+
+func resume_motion():
+	attack_animation = false
+	if direction:
+		velocity.x = direction.x * maxSpeed
+	else:
+		velocity.x = move_toward(velocity.x, 0, maxSpeed)
 	
