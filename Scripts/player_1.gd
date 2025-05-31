@@ -71,7 +71,7 @@ func _physics_process(delta):
 	#Handles the movement and direction of the character
 	direction = Input.get_vector("Walk Backwards","Walk Forward", "Crouch","Jump")
 	
-	
+	#Handles horizontal movement 
 	if not attack_animation:
 		if direction:
 			velocity.x = direction.x * maxSpeed
@@ -80,7 +80,7 @@ func _physics_process(delta):
 	
 	#Handles the jump animation.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		#was_in_air = true
+		was_in_air = true
 		jump()
 	
 	#Resumes movement after attack animation is finished
@@ -105,11 +105,11 @@ func update_facing_direction():
 		
 func jump():
 	velocity.y = jumpVelocity
-	state_machine.travel("Karate Man animations_jump")
+	state_machine.travel("Karate Man animations_jump-start")
 	animation_locked = true
 	
 func land():
-	state_machine.travel("Karate Man animations_jump-fall") 
+	state_machine.travel("Karate Man animations_jump-fall-loop") 
 	animation_locked = true
 	
 func stop_motion():
@@ -127,5 +127,6 @@ func resume_motion():
 
 func animation_finished():
 	var tempCurrent = state_machine.get_current_node()
-	if tempCurrent == "Karate Man animations_jump-fall":
+	if tempCurrent == "Karate Man animations_jump-fall-loop" && is_on_floor():
 		animation_locked = false
+		was_in_air = false

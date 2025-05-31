@@ -6272,7 +6272,7 @@ use_parent_material = true
 tile_set = SubResource("TileSet_6phgx")
 
 [node name="Player1" parent="." instance=ExtResource("2_k5f4k")]
-position = Vector2(81, 240)
+position = Vector2(126, 245)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(702.5, 225)
