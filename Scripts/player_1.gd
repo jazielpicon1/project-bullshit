@@ -35,22 +35,22 @@ func get_input():
 	
 	update_animation()
 	update_facing_direction()
-	if Input.is_action_just_pressed("Light Punch"):
+	if Input.is_action_just_pressed("Light Punch") && is_on_floor():
 		state_machine.travel("Karate Man animations_light_punch")
 		attack_animation = true
 		stop_motion()
 		return
-	if Input.is_action_just_pressed("Heavy Punch"):
+	if Input.is_action_just_pressed("Heavy Punch") && is_on_floor():
 		state_machine.travel("Karate Man animations_heavy punch")
 		attack_animation = true
 		stop_motion()
 		return
-	if Input.is_action_just_pressed("Light Kick"):
+	if Input.is_action_just_pressed("Light Kick") && is_on_floor():
 		state_machine.travel("Karate Man animations_light kick")
 		attack_animation = true
 		stop_motion()
 		return
-	if Input.is_action_just_pressed("Heavy Kick"):
+	if Input.is_action_just_pressed("Heavy Kick") && is_on_floor():
 		state_machine.travel("Karate Man animations_heavy kick")
 		attack_animation = true
 		stop_motion()
