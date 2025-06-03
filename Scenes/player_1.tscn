@@ -45,10 +45,10 @@
 [ext_resource type="Texture2D" uid="uid://6oqmfs0olp42" path="res://assets/karate_man/km_new-jump0012.png" id="39_jiv8u"]
 [ext_resource type="Texture2D" uid="uid://cxofy7ngtkptc" path="res://assets/karate_man/km_new-jump0014.png" id="40_82lt2"]
 [ext_resource type="Texture2D" uid="uid://w0v527v43boy" path="res://assets/karate_man/km_new-jump0018.png" id="41_rkb3y"]
-[ext_resource type="Script" uid="uid://d2cnwjmn8000c" path="res://Scenes/state_machine.gd" id="46_nvnk2"]
-[ext_resource type="Script" uid="uid://flyixf3q8rkn" path="res://Scenes/GroundState.gd" id="47_82lt2"]
-[ext_resource type="Script" uid="uid://c0yojph012rf3" path="res://Scenes/AirState.gd" id="48_rkb3y"]
-[ext_resource type="Script" uid="uid://cxeboek0ewyqj" path="res://Scenes/LandingState.gd" id="49_ijipl"]
+[ext_resource type="Script" uid="uid://d2cnwjmn8000c" path="res://Scripts/state_machine.gd" id="46_nvnk2"]
+[ext_resource type="Script" uid="uid://flyixf3q8rkn" path="res://Scripts/GroundState.gd" id="47_82lt2"]
+[ext_resource type="Script" uid="uid://c0yojph012rf3" path="res://Scripts/AirState.gd" id="48_rkb3y"]
+[ext_resource type="Script" uid="uid://cxeboek0ewyqj" path="res://Scripts/LandingState.gd" id="49_ijipl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfbq2"]
 animations = [{
@@ -745,7 +745,7 @@ advance_mode = 2
 "states/Karate Man animations_walking/position" = Vector2(634, 129)
 states/Start/position = Vector2(109, 73)
 transitions = ["Karate Man animations_standing", "Karate Man animations_walking", SubResource("AnimationNodeStateMachineTransition_mndha"), "Karate Man animations_walking", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_2ympu"), "Karate Man animations_standing", "Karate Man animations_light_punch", SubResource("AnimationNodeStateMachineTransition_1fs8r"), "Karate Man animations_walking", "Karate Man animations_light_punch", SubResource("AnimationNodeStateMachineTransition_s4j3i"), "Karate Man animations_light_punch", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_et7db"), "Karate Man animations_walking", "Karate Man animations_heavy punch", SubResource("AnimationNodeStateMachineTransition_k46vw"), "Karate Man animations_standing", "Karate Man animations_heavy punch", SubResource("AnimationNodeStateMachineTransition_xg3ne"), "Karate Man animations_heavy punch", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_tyugg"), "Karate Man animations_walking", "Karate Man animations_light kick", SubResource("AnimationNodeStateMachineTransition_hsg2c"), "Karate Man animations_standing", "Karate Man animations_light kick", SubResource("AnimationNodeStateMachineTransition_vadkl"), "Karate Man animations_light kick", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_bkimo"), "Karate Man animations_standing", "Karate Man animations_jump-start", SubResource("AnimationNodeStateMachineTransition_lctyb"), "Karate Man animations_walking", "Karate Man animations_jump-start", SubResource("AnimationNodeStateMachineTransition_5fqwb"), "Karate Man animations_walking", "Karate Man animations_heavy kick", SubResource("AnimationNodeStateMachineTransition_ty4o1"), "Karate Man animations_standing", "Karate Man animations_heavy kick", SubResource("AnimationNodeStateMachineTransition_305br"), "Karate Man animations_heavy kick", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_41bo0"), "Karate Man animations_jump-start", "Karate Man animations_jump-loop", SubResource("AnimationNodeStateMachineTransition_of62n"), "Karate Man animations_jump-loop", "Karate Man animations_jump-fall", SubResource("AnimationNodeStateMachineTransition_82lt2"), "Karate Man animations_jump-fall", "Karate Man animations_jump-fall-loop", SubResource("AnimationNodeStateMachineTransition_rkb3y"), "Karate Man animations_jump-fall-loop", "Karate Man animations_standing", SubResource("AnimationNodeStateMachineTransition_ijipl")]
-graph_offset = Vector2(-60.908, 195.844)
+graph_offset = Vector2(-60.908, -73.0573)
 
 [node name="Player1" type="CharacterBody2D" groups=["Player1", "States"]]
 script = ExtResource("1_c4k0l")
