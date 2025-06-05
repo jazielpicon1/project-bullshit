@@ -45,10 +45,10 @@
 [ext_resource type="Texture2D" uid="uid://6oqmfs0olp42" path="res://assets/karate_man/km_new-jump0012.png" id="39_jiv8u"]
 [ext_resource type="Texture2D" uid="uid://cxofy7ngtkptc" path="res://assets/karate_man/km_new-jump0014.png" id="40_82lt2"]
 [ext_resource type="Texture2D" uid="uid://w0v527v43boy" path="res://assets/karate_man/km_new-jump0018.png" id="41_rkb3y"]
-[ext_resource type="Script" uid="uid://d2cnwjmn8000c" path="res://Scripts/state_machine.gd" id="46_nvnk2"]
-[ext_resource type="Script" uid="uid://flyixf3q8rkn" path="res://Scripts/GroundState.gd" id="47_82lt2"]
-[ext_resource type="Script" uid="uid://c0yojph012rf3" path="res://Scripts/AirState.gd" id="48_rkb3y"]
-[ext_resource type="Script" uid="uid://cxeboek0ewyqj" path="res://Scripts/LandingState.gd" id="49_ijipl"]
+[ext_resource type="Script" path="res://Scripts/state_machine.gd" id="46_nvnk2"]
+[ext_resource type="Script" path="res://Scripts/GroundState.gd" id="47_82lt2"]
+[ext_resource type="Script" path="res://Scripts/AirState.gd" id="48_rkb3y"]
+[ext_resource type="Script" path="res://Scripts/LandingState.gd" id="49_ijipl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfbq2"]
 animations = [{
