@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://cwcu54gcbtjdl"]
+[gd_scene load_steps=101 format=3 uid="uid://cwcu54gcbtjdl"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_c4k0l"]
 [ext_resource type="Texture2D" uid="uid://bagfh8lyeje5x" path="res://assets/karate_man/km_super-punch0000.png" id="2_kslfe"]
@@ -33,6 +33,11 @@
 [ext_resource type="Texture2D" uid="uid://db2lljwi5e1qg" path="res://assets/karate_man/km_jumpstart0001.png" id="16_gepg7"]
 [ext_resource type="Texture2D" uid="uid://8xchyqiovdb2" path="res://assets/karate_man/km_jumpstart0002.png" id="17_lctyb"]
 [ext_resource type="Texture2D" uid="uid://joymccucci8n" path="res://assets/karate_man/km_jumpstart0004.png" id="18_s1db0"]
+[ext_resource type="Texture2D" uid="uid://d0h0q0ad500df" path="res://assets/karate_man/km_jump-punch0001.png" id="19_658bf"]
+[ext_resource type="Texture2D" uid="uid://6ukkg7xq4ttg" path="res://assets/karate_man/km_jump-punch0002.png" id="20_ymmlu"]
+[ext_resource type="Texture2D" uid="uid://cm6q2h4gkm2qb" path="res://assets/karate_man/km_jump-punch0003.png" id="21_kfi4n"]
+[ext_resource type="Texture2D" uid="uid://fkav2pax1yqs" path="res://assets/karate_man/km_jump-punch0004.png" id="22_3we4x"]
+[ext_resource type="Texture2D" uid="uid://cdbu6dospxu6t" path="res://assets/karate_man/km_jump-punch0005.png" id="23_h8i1p"]
 [ext_resource type="Texture2D" uid="uid://cjj2vuh264mv1" path="res://assets/karate_man/km_light-kick0000.png" id="28_41bo0"]
 [ext_resource type="Texture2D" uid="uid://dg31ln0d24ipo" path="res://assets/karate_man/km_light-kick0001.png" id="29_h8d83"]
 [ext_resource type="Texture2D" uid="uid://bkyg0gif8wth0" path="res://assets/karate_man/km_light-kick0002.png" id="30_5xydj"]
@@ -125,6 +130,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_658bf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ymmlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_kfi4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_3we4x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_h8i1p")
+}],
+"loop": true,
+"name": &"jump punch",
 "speed": 5.0
 }, {
 "frames": [{
@@ -293,10 +318,39 @@ tracks/1/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_1m8ld"]
+resource_name = "jump punch"
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump punch"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.166667, 0.25, 0.283333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jkush"]
 _data = {
 &"RESET": SubResource("Animation_lp8rx"),
 &"fall": SubResource("Animation_h8d83"),
+&"jump punch": SubResource("Animation_1m8ld"),
 &"standing": ExtResource("34_ty4o1")
 }
 
