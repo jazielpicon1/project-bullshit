@@ -1,21 +1,26 @@
-[gd_scene load_steps=101 format=3 uid="uid://cwcu54gcbtjdl"]
+[gd_scene load_steps=107 format=3 uid="uid://cwcu54gcbtjdl"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_c4k0l"]
+[ext_resource type="Texture2D" uid="uid://bi7t2bxp7qxmj" path="res://assets/karate_man/km_crouch0001.png" id="2_1m8ld"]
 [ext_resource type="Texture2D" uid="uid://bagfh8lyeje5x" path="res://assets/karate_man/km_super-punch0000.png" id="2_kslfe"]
 [ext_resource type="Texture2D" uid="uid://cw3d6mvyc0blf" path="res://assets/karate_man/km_heavy-kick0000.png" id="2_vadkl"]
 [ext_resource type="Texture2D" uid="uid://brfgmdmmeuxmo" path="res://assets/karate_man/km_walk.png" id="3_aatkl"]
 [ext_resource type="Texture2D" uid="uid://77lsap5aue4a" path="res://assets/karate_man/km_heavy-kick0001.png" id="3_bkimo"]
 [ext_resource type="Texture2D" uid="uid://bnsv6q3qf1sli" path="res://assets/karate_man/km_super-punch0003.png" id="3_k46vw"]
 [ext_resource type="Texture2D" uid="uid://cl8yy274gl8b7" path="res://assets/karate_man/38e.png" id="3_lp8rx"]
+[ext_resource type="Texture2D" uid="uid://cyntyd6i0fqur" path="res://assets/karate_man/km_crouch0002.png" id="3_y5ntg"]
 [ext_resource type="Texture2D" uid="uid://di026bfwtj4qr" path="res://assets/karate_man/38f.png" id="4_jkush"]
+[ext_resource type="Texture2D" uid="uid://c8tdqaramvj5a" path="res://assets/karate_man/km_crouch0003.png" id="4_jqblu"]
 [ext_resource type="Texture2D" uid="uid://ua78wiqyog55" path="res://assets/karate_man/km_super-punch0004.png" id="4_xg3ne"]
 [ext_resource type="Texture2D" uid="uid://3rr0b41yaa2g" path="res://assets/karate_man/km_heavy-kick0003.png" id="4_yt1lk"]
 [ext_resource type="Texture2D" uid="uid://1vnjwpcorgmi" path="res://assets/karate_man/km_punch0000.png" id="5_2ympu"]
 [ext_resource type="Texture2D" uid="uid://dq8chhyysqtoc" path="res://assets/karate_man/km_heavy-kick0004.png" id="5_gepg7"]
 [ext_resource type="Texture2D" uid="uid://dpuod15hy1sey" path="res://assets/karate_man/km_super-punch0006.png" id="5_tyugg"]
+[ext_resource type="Texture2D" uid="uid://tfer3w55vngv" path="res://assets/karate_man/km_crouch0004.png" id="5_wsea5"]
 [ext_resource type="Texture2D" uid="uid://6ysvfbtvu1bx" path="res://assets/karate_man/km_punch0002.png" id="6_1fs8r"]
 [ext_resource type="Texture2D" uid="uid://bmvkvaaymvgap" path="res://assets/karate_man/km_heavy-kick0005.png" id="6_lctyb"]
 [ext_resource type="Texture2D" uid="uid://byi6gyrqp1h5s" path="res://assets/karate_man/km_super-punch0007.png" id="6_q1mvt"]
+[ext_resource type="Texture2D" uid="uid://csf8keudnsl0x" path="res://assets/karate_man/km_crouch0005.png" id="6_tyeg6"]
 [ext_resource type="Texture2D" uid="uid://cwl465o1b7b50" path="res://assets/karate_man/km_stance0000.png" id="7_mndha"]
 [ext_resource type="Texture2D" uid="uid://d3llt8weptlyy" path="res://assets/karate_man/km_heavy-kick0007.png" id="7_s1db0"]
 [ext_resource type="Texture2D" uid="uid://5x7qi70kjgly" path="res://assets/karate_man/km_punch0003.png" id="7_s4j3i"]
@@ -58,6 +63,26 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfbq2"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1m8ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_y5ntg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jqblu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_wsea5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_tyeg6")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("18_s1db0")
@@ -346,9 +371,39 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
+[sub_resource type="Animation" id="Animation_l6bev"]
+resource_name = "crouch"
+length = 0.291671
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"crouch"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0416667, 0.125, 0.166667, 0.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jkush"]
 _data = {
 &"RESET": SubResource("Animation_lp8rx"),
+&"crouch": SubResource("Animation_l6bev"),
 &"fall": SubResource("Animation_h8d83"),
 &"jump punch": SubResource("Animation_1m8ld"),
 &"standing": ExtResource("34_ty4o1")
