@@ -4,6 +4,7 @@ class_name GroundState
 
 @export var jumpVelocity : float = -500.0
 @export var air_state : State
+@export var crouching_state : State
 
 func state_input(event : InputEvent):
 	#Handles the jump animation.
@@ -12,13 +13,19 @@ func state_input(event : InputEvent):
 	#Handles the attack animations on the ground.
 	if(event.is_action_pressed("Attack Button")):
 		get_input()
+	if(event.is_action_pressed("Crouch")):
+		crouch()
 			
 
 func jump():
 	character.velocity.y = jumpVelocity
 	next_state = air_state
 	playback.travel("Karate Man animations_jump-start")
-	
+
+func crouch():
+	character.velocity.x = 0
+	next_state = crouching_state
+	playback.travel("crouch")
 	
 func stop_motion():
 	if character.attack_animation:
