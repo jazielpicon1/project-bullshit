@@ -1,4 +1,4 @@
-[gd_scene load_steps=122 format=3 uid="uid://cwcu54gcbtjdl"]
+[gd_scene load_steps=128 format=3 uid="uid://cwcu54gcbtjdl"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_c4k0l"]
 [ext_resource type="Texture2D" uid="uid://bi7t2bxp7qxmj" path="res://assets/karate_man/km_crouch0001.png" id="2_1m8ld"]
@@ -21,20 +21,25 @@
 [ext_resource type="Texture2D" uid="uid://bmvkvaaymvgap" path="res://assets/karate_man/km_heavy-kick0005.png" id="6_lctyb"]
 [ext_resource type="Texture2D" uid="uid://byi6gyrqp1h5s" path="res://assets/karate_man/km_super-punch0007.png" id="6_q1mvt"]
 [ext_resource type="Texture2D" uid="uid://csf8keudnsl0x" path="res://assets/karate_man/km_crouch0005.png" id="6_tyeg6"]
+[ext_resource type="Texture2D" uid="uid://bcbxcknvrsnq6" path="res://assets/karate_man/km_crouch-kick0001.png" id="7_dq0te"]
 [ext_resource type="Texture2D" uid="uid://bii5wtefm0nbi" path="res://assets/karate_man/km_crouch-punch0001.png" id="7_efan6"]
 [ext_resource type="Texture2D" uid="uid://cwl465o1b7b50" path="res://assets/karate_man/km_stance0000.png" id="7_mndha"]
 [ext_resource type="Texture2D" uid="uid://d3llt8weptlyy" path="res://assets/karate_man/km_heavy-kick0007.png" id="7_s1db0"]
 [ext_resource type="Texture2D" uid="uid://5x7qi70kjgly" path="res://assets/karate_man/km_punch0003.png" id="7_s4j3i"]
+[ext_resource type="Texture2D" uid="uid://d0hdlketgl4kk" path="res://assets/karate_man/km_crouch-kick0002.png" id="8_0e508"]
 [ext_resource type="Texture2D" uid="uid://7uovh6twq5gl" path="res://assets/karate_man/km_stance0009.png" id="8_2ympu"]
 [ext_resource type="Texture2D" uid="uid://bpg28fgf4gwkm" path="res://assets/karate_man/km_heavy-kick0008.png" id="8_5fqwb"]
 [ext_resource type="Texture2D" uid="uid://82xjcqwcqocu" path="res://assets/karate_man/km_crouch-punch0002.png" id="8_tnh5b"]
 [ext_resource type="Texture2D" uid="uid://bavkjyqdx47s6" path="res://assets/karate_man/km_stance0010.png" id="9_1fs8r"]
 [ext_resource type="Texture2D" uid="uid://d0yn0f0h06brn" path="res://assets/karate_man/km_crouch-punch0003.png" id="9_7bljq"]
+[ext_resource type="Texture2D" uid="uid://dn0oi7dub54g3" path="res://assets/karate_man/km_crouch-kick0003.png" id="9_e6mfa"]
 [ext_resource type="Texture2D" uid="uid://36gqka2723ch" path="res://assets/karate_man/km_heavy-kick0010.png" id="9_ty4o1"]
+[ext_resource type="Texture2D" uid="uid://ckvy8b7g1ks3q" path="res://assets/karate_man/km_crouch-kick0004.png" id="10_65oxk"]
 [ext_resource type="Texture2D" uid="uid://mmtednhv28wi" path="res://assets/karate_man/km_heavy-kick0012.png" id="10_305br"]
 [ext_resource type="Texture2D" uid="uid://b26jiyf6x72pn" path="res://assets/karate_man/km_normal-kick0000.png" id="10_dbliy"]
 [ext_resource type="Texture2D" uid="uid://6ux1ru01awy" path="res://assets/karate_man/km_crouch-punch0004.png" id="10_ta45h"]
 [ext_resource type="Texture2D" uid="uid://d01tp3qnphmgy" path="res://assets/karate_man/km_normal-kick0001.png" id="11_ccce5"]
+[ext_resource type="Texture2D" uid="uid://bx4s3viai4vgg" path="res://assets/karate_man/km_crouch-kick0005.png" id="11_lpy0u"]
 [ext_resource type="Texture2D" uid="uid://6ypyfu5mwu6j" path="res://assets/karate_man/km_crouch-punch0005.png" id="11_upi3c"]
 [ext_resource type="Texture2D" uid="uid://b3himqorlscjv" path="res://assets/karate_man/km_normal-kick0002.png" id="12_ex6al"]
 [ext_resource type="Texture2D" uid="uid://ggn0bh7mkcx7" path="res://assets/karate_man/km_normal-kick0004.png" id="13_durvq"]
@@ -91,6 +96,26 @@ animations = [{
 }],
 "loop": true,
 "name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_dq0te")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_0e508")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_e6mfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_65oxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lpy0u")
+}],
+"loop": true,
+"name": &"crouch kick",
 "speed": 5.0
 }, {
 "frames": [{
@@ -837,8 +862,38 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4]
 }
 
+[sub_resource type="Animation" id="Animation_xy0q5"]
+resource_name = "crouch kick"
+length = 0.250004
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"crouch kick"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.125, 0.166667, 0.208333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mndha"]
 _data = {
+&"crouch kick": SubResource("Animation_xy0q5"),
 &"crouch punch": SubResource("Animation_dq0te"),
 &"heavy kick": SubResource("Animation_dbliy"),
 &"heavy punch": SubResource("Animation_qrwht"),
