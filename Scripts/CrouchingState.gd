@@ -5,9 +5,10 @@ class_name CrouchingState
 @export var ground_state : State
 
 func state_input(event : InputEvent):
-	#Handles the jump animation.
+	#Returns character to standing state when crouch button is released
 	if(event.is_action_released("Crouch")):
 		next_state = ground_state
+	#Handles Attack Animation on the ground
 	if(event.is_action_pressed("Attack Button")):
 		get_input()
 
