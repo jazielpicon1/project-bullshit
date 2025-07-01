@@ -1,10 +1,7 @@
-[gd_scene load_steps=7 format=4 uid="uid://dqlq6niwh71ul"]
+[gd_scene load_steps=6 format=4 uid="uid://dqlq6niwh71ul"]
 
 [ext_resource type="Texture2D" uid="uid://cy4dvkyufdji" path="res://assets/Stages/training stage 3.0.jpg" id="1_tumq0"]
 [ext_resource type="PackedScene" uid="uid://cwcu54gcbtjdl" path="res://Scenes/player_1.tscn" id="2_k5f4k"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k5f4k"]
-distance = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k5f4k"]
 texture = ExtResource("1_tumq0")
@@ -6244,17 +6241,9 @@ physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_k5f4k")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6phgx"]
-distance = -662.0
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k5f4k"]
 
 [node name="Level" type="Node2D"]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, 350)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-rotation = 1.5708
-shape = SubResource("WorldBoundaryShape2D_k5f4k")
 
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(0, 350)
@@ -6283,19 +6272,16 @@ use_parent_material = true
 tile_set = SubResource("TileSet_6phgx")
 
 [node name="Player1" parent="." instance=ExtResource("2_k5f4k")]
-position = Vector2(218, 71)
+position = Vector2(126, 245)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(702.5, 225)
 zoom = Vector2(0.82, 0.63)
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(693, 556)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(50, 0)
-rotation = -1.5708
-shape = SubResource("WorldBoundaryShape2D_6phgx")
-debug_color = Color(0.824268, 0.00163779, 0.95752, 0.42)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+rotation = 1.5708
+shape = SubResource("WorldBoundaryShape2D_k5f4k")
 
 [connection signal="tree_exited" from="." to="Player1" method="_on_level_tree_exited"]

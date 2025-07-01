@@ -2,7 +2,6 @@ extends State
 
 class_name GroundState
 
-@export var HeavyKick : State
 @export var jumpVelocity : float = -500.0
 @export var air_state : State
 @export var crouching_state : State
@@ -53,19 +52,5 @@ func get_input():
 	if Input.is_action_just_pressed("Heavy Kick"):
 		playback.travel("Karate Man animations_heavy kick")
 		character.attack_animation = true
-		enterheavykickstate_()
 		stop_motion()
 		return
-		
-		
-		
-		
-
-
-
-
-
-func enterheavykickstate_():
-	if Input.is_action_just_pressed("Heavy Kick"):
-		next_state = HeavyKick
-		
