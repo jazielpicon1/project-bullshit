@@ -5,10 +5,10 @@ extends CharacterBody2D
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var state_machine: StateMachine = $StateMachine
 @export var maxSpeed : float = 200.0
-@export var jumpVelocity : float = -500.0
+@export var jumpVelocity : float = -900.0
 
 # Gets the default velocity of gravity from the project settings (980 px/s^2)
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = 1800
 var animation_locked : bool = false
 var attack_animation : bool = false
 var direction : Vector2 = Vector2.ZERO
