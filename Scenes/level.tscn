@@ -6248,6 +6248,7 @@ sources/0 = SubResource("TileSetAtlasSource_k5f4k")
 distance = -662.0
 
 [node name="Level" type="Node2D"]
+scale = Vector2(1.00583, 1.01358)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 350)
@@ -6283,7 +6284,7 @@ use_parent_material = true
 tile_set = SubResource("TileSet_6phgx")
 
 [node name="Player1" parent="." instance=ExtResource("2_k5f4k")]
-position = Vector2(218, 71)
+position = Vector2(125.269, 209.161)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(702.5, 225)
