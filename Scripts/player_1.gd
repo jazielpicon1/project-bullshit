@@ -18,9 +18,7 @@ var was_in_air : bool = false
 #sets state machine with the animations from the animation tree
 func _ready():
 	animation_tree.active = true
-	print(MoveSetManager.nameDictionary[name][1])
 
-	
 func _physics_process(delta):
 	#Adds gravity to the characters
 	update_animation()

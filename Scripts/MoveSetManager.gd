@@ -1,4 +1,5 @@
 extends Node
+enum {Punch, Kick, Right, Left, Down}
 
 var generalMoves = {
 	1 : "Light Punch",
@@ -10,12 +11,12 @@ var generalMoves = {
 }
 
 
-var karateManMoves = {
-	1 : "I'm going to kick your ass",
-	2: "Deez Nuts"
-}
+var karateManMoves : Dictionary = {
+	"Karate Lunge" : [Down, Right, Punch],
+	}
 
-var nameDictionary = {
+
+var nameDictionary : Dictionary = {
 	"Player1" : karateManMoves
 	
 }
