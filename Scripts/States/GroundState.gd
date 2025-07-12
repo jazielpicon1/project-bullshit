@@ -32,6 +32,8 @@ func state_input(event : InputEvent):
 		add_input_to_sequence(Right)
 	elif event.is_action_pressed("Punch"):
 		add_input_to_sequence(Punch)
+	elif event.is_action_pressed("Left") and character.scale.x >= -0.2:
+		add_input_to_sequence(Right)
 	timer.start()
 	check_sequence()	
 
