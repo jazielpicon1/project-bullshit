@@ -169,3 +169,7 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("4_cqq1g")
 theme_override_font_sizes/font_size = 50
 text = "PRESS ANY BUTTON TO START"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/mm_campaign" to="." method="_on_mm_campaign_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/mm_sandbox" to="." method="_on_mm_sandbox_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/mm_quit" to="." method="_on_mm_quit_pressed"]
