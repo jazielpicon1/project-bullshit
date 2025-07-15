@@ -5,7 +5,7 @@ extends Control
 
 func _ready() -> void:
 	#mainbanner.visible = true
-	pass
+	$CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/mm_campaign.grab_focus()
 
 func _on_mm_quit_pressed() -> void:
 	get_tree().quit()
