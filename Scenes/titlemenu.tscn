@@ -78,6 +78,7 @@ layout_mode = 2
 [node name="mm_campaign" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+focus_neighbor_top = NodePath("../mm_quit")
 theme_type_variation = &"FlatButton"
 text = "campaign"
 alignment = 0
@@ -107,6 +108,7 @@ alignment = 0
 [node name="mm_quit" type="Button" parent="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../mm_campaign")
 theme_override_font_sizes/font_size = 30
 text = "quit"
 flat = true
@@ -169,3 +171,7 @@ grow_vertical = 0
 theme_override_fonts/font = ExtResource("4_cqq1g")
 theme_override_font_sizes/font_size = 50
 text = "PRESS ANY BUTTON TO START"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/mm_campaign" to="." method="_on_mm_campaign_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/mm_sandbox" to="." method="_on_mm_sandbox_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/mm_quit" to="." method="_on_mm_quit_pressed"]
