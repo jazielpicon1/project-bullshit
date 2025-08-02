@@ -73,7 +73,7 @@
 [ext_resource type="Script" uid="uid://flyixf3q8rkn" path="res://Scripts/States/GroundState.gd" id="47_82lt2"]
 [ext_resource type="Script" uid="uid://c0yojph012rf3" path="res://Scripts/States/AirState.gd" id="48_rkb3y"]
 [ext_resource type="Script" uid="uid://cxeboek0ewyqj" path="res://Scripts/States/LandingState.gd" id="49_ijipl"]
-[ext_resource type="Script" uid="uid://bq3aol5h5kvmc" path="res://Scripts/state_debug_label.gd" id="50_rkb3y"]
+[ext_resource type="Script" uid="uid://bq3aol5h5kvmc" path="res://Scripts/States/state_debug_label.gd" id="50_rkb3y"]
 [ext_resource type="Script" uid="uid://bq8nd45sy4qsb" path="res://Scripts/States/CrouchingState.gd" id="64_l6bev"]
 [ext_resource type="Texture2D" uid="uid://d0is5iwit3gla" path="res://assets/karate_man/km_special-v1-1.png" id="66_nq1pv"]
 [ext_resource type="Texture2D" uid="uid://b74xq4cwpy3il" path="res://assets/karate_man/km_special-v1-2.png" id="67_35gtw"]
@@ -1373,6 +1373,7 @@ specialMove_state = NodePath("../SpecialMove State")
 
 [node name="KarateLungeSuccessNoise" type="AudioStreamPlayer2D" parent="StateMachine/Ground"]
 stream = ExtResource("88_xvfab")
+bus = &"Sfx"
 
 [node name="Air" type="Node" parent="StateMachine" node_paths=PackedStringArray("landing_state")]
 script = ExtResource("48_rkb3y")
