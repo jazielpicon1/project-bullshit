@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c8othrpx2ttlo"]
+[gd_scene load_steps=10 format=3 uid="uid://c8othrpx2ttlo"]
 
 [ext_resource type="Texture2D" uid="uid://b3qxl435nboo7" path="res://assets/ui/pbs_banner.png" id="1_14grm"]
 [ext_resource type="Shader" uid="uid://o4m2i3x6itu3" path="res://assets/shaders/cascador.gdshader" id="1_36fdp"]
@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://brjiqd3qv04ix" path="res://assets/ui/fonts/RubikMonoOne-Regular.ttf" id="4_cqq1g"]
 [ext_resource type="Script" uid="uid://couwre8gbqcx7" path="res://Scripts/dku_scripts.gd" id="5_bsyxc"]
 [ext_resource type="Theme" uid="uid://cybx8tb4of51l" path="res://assets/ui/default_theme.tres" id="5_e3xc5"]
+[ext_resource type="PackedScene" uid="uid://3leaw2i1f2tq" path="res://Scenes/options_menu.tscn" id="8_w1p8k"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cqq1g"]
 shader = ExtResource("1_36fdp")
@@ -172,6 +173,11 @@ theme_override_fonts/font = ExtResource("4_cqq1g")
 theme_override_font_sizes/font_size = 50
 text = "PRESS ANY BUTTON TO START"
 
+[node name="options_menu" parent="." instance=ExtResource("8_w1p8k")]
+visible = false
+layout_mode = 1
+
 [connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/mm_campaign" to="." method="_on_mm_campaign_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/mm_sandbox" to="." method="_on_mm_sandbox_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/mm_options" to="." method="_on_mm_options_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/mm_quit" to="." method="_on_mm_quit_pressed"]

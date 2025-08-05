@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export var jumpVelocity : float = -900.0
 
 # Gets the default velocity of gravity from the project settings (980 px/s^2)
-var gravity = 1800
+var gravity = 2200
 var animation_locked : bool = false
 var attack_animation : bool = false
 var direction : Vector2 = Vector2.ZERO
