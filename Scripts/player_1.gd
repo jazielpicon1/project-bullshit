@@ -78,3 +78,7 @@ func resume_motion():
 	else:
 		velocity.x = move_toward(velocity.x, 0, maxSpeed)
 	
+
+func _on_melee_hitbox_area_entered(area: Area2D) -> void:
+	if area.is_in_group("Hurtbox"):
+		area.take_damage()

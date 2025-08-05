@@ -27,6 +27,7 @@ MainMenuMusic="*res://Scenes/main_menu_music.tscn"
 
 Player1=""
 States=""
+Hurtbox="Assets that receive damage when a hitbox enters the area."
 
 [input]
 
