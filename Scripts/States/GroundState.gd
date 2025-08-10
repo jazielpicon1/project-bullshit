@@ -56,11 +56,13 @@ func stop_motion():
 func get_input():
 	if Input.is_action_just_pressed("Light Punch"):
 		playback.travel("Karate Man animations_light_punch")
+		$LightPunchSfx.play()
 		character.attack_animation = true
 		stop_motion()
 		return
 	if Input.is_action_just_pressed("Heavy Punch"):
 		playback.travel("Karate Man animations_heavy punch")
+		$HeavyPunchSfx.play()
 		character.attack_animation = true
 		stop_motion()
 		return
@@ -71,8 +73,9 @@ func get_input():
 		return
 	if Input.is_action_just_pressed("Heavy Kick"):
 		playback.travel("Karate Man animations_heavy kick")
+		$HeavyKickSfx.play()
 		character.attack_animation = true
-		enterheavykickstate_()
+		#enterheavykickstate_()
 		stop_motion()
 		return
 		
@@ -102,6 +105,9 @@ func check_sequence()->void:
 		trim.reverse() #return to right order
 		if trim == combo: #Combo match
 			print("Special Move: ", Name)
+			$LightPunchSfx.stop()
+			$HeavyPunchSfx.stop()
+			$KarateLungeSfx.play()
 			$KarateLungeSuccessNoise.play()
 			playback.travel("Karate Man animations_karate lunge")
 			next_state = specialMove_state
@@ -111,7 +117,7 @@ func check_sequence()->void:
 
 
 
-func enterheavykickstate_():
-	if Input.is_action_just_pressed("Heavy Kick"):
-		next_state = HeavyKick
+#func enterheavykickstate_():
+	#if Input.is_action_just_pressed("Heavy Kick"):
+		#next_state = HeavyKick
 		
