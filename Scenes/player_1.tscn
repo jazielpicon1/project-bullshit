@@ -1,24 +1,29 @@
-[gd_scene load_steps=179 format=3 uid="uid://cwcu54gcbtjdl"]
+[gd_scene load_steps=191 format=3 uid="uid://cwcu54gcbtjdl"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_c4k0l"]
+[ext_resource type="Texture2D" uid="uid://c6dbdgrhj2dd" path="res://assets/karate_man/km_backward-dash-1.png" id="2_0k7bq"]
 [ext_resource type="Texture2D" uid="uid://bi7t2bxp7qxmj" path="res://assets/karate_man/km_crouch0001.png" id="2_1m8ld"]
 [ext_resource type="Texture2D" uid="uid://bagfh8lyeje5x" path="res://assets/karate_man/km_super-punch0000.png" id="2_kslfe"]
 [ext_resource type="Texture2D" uid="uid://cw3d6mvyc0blf" path="res://assets/karate_man/km_heavy-kick0000.png" id="2_vadkl"]
 [ext_resource type="Texture2D" uid="uid://brfgmdmmeuxmo" path="res://assets/karate_man/km_walk.png" id="3_aatkl"]
 [ext_resource type="Texture2D" uid="uid://77lsap5aue4a" path="res://assets/karate_man/km_heavy-kick0001.png" id="3_bkimo"]
 [ext_resource type="Texture2D" uid="uid://bnsv6q3qf1sli" path="res://assets/karate_man/km_super-punch0003.png" id="3_k46vw"]
+[ext_resource type="Texture2D" uid="uid://hdn7yw1e5f2e" path="res://assets/karate_man/km_backward-dash-2.png" id="3_kured"]
 [ext_resource type="Texture2D" uid="uid://cl8yy274gl8b7" path="res://assets/karate_man/38e.png" id="3_lp8rx"]
 [ext_resource type="Texture2D" uid="uid://cyntyd6i0fqur" path="res://assets/karate_man/km_crouch0002.png" id="3_y5ntg"]
 [ext_resource type="Texture2D" uid="uid://di026bfwtj4qr" path="res://assets/karate_man/38f.png" id="4_jkush"]
+[ext_resource type="Texture2D" uid="uid://bloby5elmsbd1" path="res://assets/karate_man/km_backward-dash-3.png" id="4_joleq"]
 [ext_resource type="Texture2D" uid="uid://c8tdqaramvj5a" path="res://assets/karate_man/km_crouch0003.png" id="4_jqblu"]
 [ext_resource type="Texture2D" uid="uid://ua78wiqyog55" path="res://assets/karate_man/km_super-punch0004.png" id="4_xg3ne"]
 [ext_resource type="Texture2D" uid="uid://3rr0b41yaa2g" path="res://assets/karate_man/km_heavy-kick0003.png" id="4_yt1lk"]
 [ext_resource type="Texture2D" uid="uid://1vnjwpcorgmi" path="res://assets/karate_man/km_punch0000.png" id="5_2ympu"]
 [ext_resource type="Texture2D" uid="uid://dq8chhyysqtoc" path="res://assets/karate_man/km_heavy-kick0004.png" id="5_gepg7"]
 [ext_resource type="Texture2D" uid="uid://dpuod15hy1sey" path="res://assets/karate_man/km_super-punch0006.png" id="5_tyugg"]
+[ext_resource type="Texture2D" uid="uid://c2u8pbl1n2np" path="res://assets/karate_man/km_backward-dash-4.png" id="5_vn032"]
 [ext_resource type="Texture2D" uid="uid://tfer3w55vngv" path="res://assets/karate_man/km_crouch0004.png" id="5_wsea5"]
 [ext_resource type="Texture2D" uid="uid://6ysvfbtvu1bx" path="res://assets/karate_man/km_punch0002.png" id="6_1fs8r"]
 [ext_resource type="Texture2D" uid="uid://bmvkvaaymvgap" path="res://assets/karate_man/km_heavy-kick0005.png" id="6_lctyb"]
+[ext_resource type="Texture2D" uid="uid://dybp1oi0jb65i" path="res://assets/karate_man/km_backward-dash-5.png" id="6_ormha"]
 [ext_resource type="Texture2D" uid="uid://byi6gyrqp1h5s" path="res://assets/karate_man/km_super-punch0007.png" id="6_q1mvt"]
 [ext_resource type="Texture2D" uid="uid://csf8keudnsl0x" path="res://assets/karate_man/km_crouch0005.png" id="6_tyeg6"]
 [ext_resource type="Texture2D" uid="uid://bcbxcknvrsnq6" path="res://assets/karate_man/km_crouch-kick0001.png" id="7_dq0te"]
@@ -53,12 +58,19 @@
 [ext_resource type="Texture2D" uid="uid://cm6q2h4gkm2qb" path="res://assets/karate_man/km_jump-punch0003.png" id="21_kfi4n"]
 [ext_resource type="Texture2D" uid="uid://fkav2pax1yqs" path="res://assets/karate_man/km_jump-punch0004.png" id="22_3we4x"]
 [ext_resource type="Texture2D" uid="uid://cdbu6dospxu6t" path="res://assets/karate_man/km_jump-punch0005.png" id="23_h8i1p"]
+[ext_resource type="Texture2D" uid="uid://can0jae3u27xr" path="res://assets/karate_man/km_forward-dash-1.png" id="23_ig2xa"]
+[ext_resource type="Texture2D" uid="uid://dsm37rf8c1vla" path="res://assets/karate_man/km_forward-dash-2.png" id="24_1wlwd"]
 [ext_resource type="Texture2D" uid="uid://dipwt4uncnw3j" path="res://assets/karate_man/km_jump-kick0001.png" id="24_tyeg6"]
 [ext_resource type="Texture2D" uid="uid://b5ksgafpl8a8l" path="res://assets/karate_man/km_jump-kick0003.png" id="25_l6bev"]
+[ext_resource type="Texture2D" uid="uid://bc436rp0cewub" path="res://assets/karate_man/km_forward-dash-3.png" id="25_uhe3b"]
 [ext_resource type="Texture2D" uid="uid://dvrglvtla8irt" path="res://assets/karate_man/km_jump-kick0004.png" id="26_a7fm0"]
+[ext_resource type="Texture2D" uid="uid://dorxw6nf7l475" path="res://assets/karate_man/km_forward-dash-4.png" id="26_fu7ba"]
+[ext_resource type="Texture2D" uid="uid://biets3l4aawdo" path="res://assets/karate_man/km_forward-dash-5.png" id="27_i47hu"]
 [ext_resource type="Texture2D" uid="uid://ct161ni5uers7" path="res://assets/karate_man/km_jump-kick0007.png" id="27_qygew"]
 [ext_resource type="Texture2D" uid="uid://cjj2vuh264mv1" path="res://assets/karate_man/km_light-kick0000.png" id="28_41bo0"]
+[ext_resource type="Texture2D" uid="uid://drrwp4i871xr3" path="res://assets/karate_man/km_forward-dash-6.png" id="28_qipej"]
 [ext_resource type="Texture2D" uid="uid://dg31ln0d24ipo" path="res://assets/karate_man/km_light-kick0001.png" id="29_h8d83"]
+[ext_resource type="Texture2D" uid="uid://1kvuj8laedxt" path="res://assets/karate_man/km_forward-dash-7.png" id="29_kdjqq"]
 [ext_resource type="Texture2D" uid="uid://bkyg0gif8wth0" path="res://assets/karate_man/km_light-kick0002.png" id="30_5xydj"]
 [ext_resource type="Texture2D" uid="uid://mj26xii03ot7" path="res://assets/karate_man/km_light-kick0004.png" id="31_ewrxp"]
 [ext_resource type="Texture2D" uid="uid://8biewu7tmrtb" path="res://assets/karate_man/km_light-kick0005.png" id="32_m77ku"]
@@ -95,6 +107,26 @@
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfbq2"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0k7bq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kured")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_joleq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vn032")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ormha")
+}],
+"loop": true,
+"name": &"backward dash",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_1m8ld")
@@ -161,6 +193,32 @@ animations = [{
 }],
 "loop": true,
 "name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_ig2xa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1wlwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_uhe3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_fu7ba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_i47hu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_qipej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_kdjqq")
+}],
+"loop": true,
+"name": &"forward dash",
 "speed": 5.0
 }, {
 "frames": [{
@@ -1791,8 +1849,8 @@ text = "State:"
 script = ExtResource("50_rkb3y")
 state_machine = NodePath("../StateMachine")
 
-[connection signal="area_entered" from="AnimatedSprite2D/MeleeHitbox" to="." method="_on_melee_hitbox_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/MeleeHitbox" to="." method="_on_heavykick_hitbox_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite2D/MeleeHitbox" to="." method="_on_melee_hitbox_area_entered"]
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="StateMachine/Landing" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="StateMachine/HeavyKick" method="_on_animation_tree_animation_finished"]
