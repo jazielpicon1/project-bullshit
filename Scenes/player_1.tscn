@@ -1,4 +1,4 @@
-[gd_scene load_steps=191 format=3 uid="uid://cwcu54gcbtjdl"]
+[gd_scene load_steps=208 format=3 uid="uid://cwcu54gcbtjdl"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_c4k0l"]
 [ext_resource type="Texture2D" uid="uid://c6dbdgrhj2dd" path="res://assets/karate_man/km_backward-dash-1.png" id="2_0k7bq"]
@@ -97,13 +97,30 @@
 [ext_resource type="Texture2D" uid="uid://bxldhoojx5u88" path="res://assets/karate_man/km_special-v1-8.png" id="73_dau7q"]
 [ext_resource type="Texture2D" uid="uid://yufhsu8yx6lh" path="res://assets/karate_man/km_special-v1-9.png" id="74_gcs77"]
 [ext_resource type="Texture2D" uid="uid://bihmki8knd4po" path="res://assets/karate_man/km_special-v1-10.png" id="75_6i1ax"]
+[ext_resource type="Texture2D" uid="uid://d3q56jg5rkhjg" path="res://assets/karate_man/km-skrrt-2.png" id="78_fqe1y"]
+[ext_resource type="Texture2D" uid="uid://cfs5dtjrnm2e3" path="res://assets/karate_man/km-skrrt-3.png" id="79_fnqhg"]
+[ext_resource type="Texture2D" uid="uid://b3n3bapclnrcm" path="res://assets/karate_man/km-skrrt-4.png" id="80_ud8yo"]
+[ext_resource type="Texture2D" uid="uid://cqi03a86cry7x" path="res://assets/karate_man/km-skrrt-5.png" id="81_esulk"]
+[ext_resource type="Texture2D" uid="uid://cywqjyvfyd6ns" path="res://assets/karate_man/km-skrrt-6.png" id="82_2gl4b"]
+[ext_resource type="Texture2D" uid="uid://cs6u37ptcsb25" path="res://assets/karate_man/km-skrrt-7.png" id="83_rw6ol"]
 [ext_resource type="AudioStream" uid="uid://k6f3ncnjjicw" path="res://Sounds/sfx/grunttuah.mp3" id="83_xeul7"]
+[ext_resource type="Texture2D" uid="uid://rny0wmsour3" path="res://assets/karate_man/km-skrrt-8.png" id="84_480lk"]
 [ext_resource type="AudioStream" uid="uid://btgjjbs1hb0sn" path="res://Sounds/sfx/hawktuah.mp3" id="84_th1ls"]
+[ext_resource type="Texture2D" uid="uid://bntggnfpnnsie" path="res://assets/karate_man/km-skrrt-9.png" id="85_1tx3q"]
 [ext_resource type="Script" uid="uid://d10g83uyk62sc" path="res://Scripts/States/heavy_kick.gd" id="85_35gtw"]
 [ext_resource type="AudioStream" uid="uid://bs54exaahs1aq" path="res://Sounds/sfx/windedhit.mp3" id="85_nch0q"]
 [ext_resource type="AudioStream" uid="uid://bbm6iapvp1x1e" path="res://Sounds/sfx/hyah!.mp3" id="86_dau7q"]
+[ext_resource type="Texture2D" uid="uid://0wsan50paf5t" path="res://assets/karate_man/km-skrrt-10.png" id="86_rycxh"]
 [ext_resource type="Script" uid="uid://bwyxxrtu3timj" path="res://Scripts/States/special_move_state.gd" id="87_xeul7"]
 [ext_resource type="AudioStream" uid="uid://d1602qabnwpjq" path="res://Sounds/Konami Intro_ Metal Gear Solid.mp3" id="88_xvfab"]
+[ext_resource type="Texture2D" uid="uid://cp3n8hg2bpfxg" path="res://assets/karate_man/km-sprint-1.png" id="97_jr8eq"]
+[ext_resource type="Texture2D" uid="uid://chw2bk1tklmri" path="res://assets/karate_man/km-sprint-2.png" id="98_vc3l7"]
+[ext_resource type="Texture2D" uid="uid://wbo1slkt85rq" path="res://assets/karate_man/km-sprint-3.png" id="99_dsmtk"]
+[ext_resource type="Texture2D" uid="uid://b285ya45fskpb" path="res://assets/karate_man/km-sprint-4.png" id="100_g8517"]
+[ext_resource type="Texture2D" uid="uid://d0l1uuoxqxull" path="res://assets/karate_man/km-sprint-5.png" id="101_1vwi1"]
+[ext_resource type="Texture2D" uid="uid://nmt3k8iabimc" path="res://assets/karate_man/km-sprint-6.png" id="102_8lj6k"]
+[ext_resource type="Texture2D" uid="uid://ll5xbl4i4vrf" path="res://assets/karate_man/km-sprint-7.png" id="103_v6jke"]
+[ext_resource type="Texture2D" uid="uid://b3x6drinhkjog" path="res://assets/karate_man/km-sprint-8.png" id="104_tb6cx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfbq2"]
 animations = [{
@@ -420,6 +437,38 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("78_fqe1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_fnqhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_ud8yo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_esulk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_2gl4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_rw6ol")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_480lk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_1tx3q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_rycxh")
+}],
+"loop": true,
+"name": &"skrrt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("66_nq1pv")
 }, {
 "duration": 1.0,
@@ -451,6 +500,35 @@ animations = [{
 }],
 "loop": true,
 "name": &"speacial v1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("97_jr8eq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_vc3l7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_dsmtk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_g8517")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_1vwi1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_8lj6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_v6jke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_tb6cx")
+}],
+"loop": true,
+"name": &"sprint",
 "speed": 5.0
 }, {
 "frames": [{
