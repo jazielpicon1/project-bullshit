@@ -1,4 +1,4 @@
-[gd_scene load_steps=234 format=3 uid="uid://cwcu54gcbtjdl"]
+[gd_scene load_steps=241 format=3 uid="uid://cwcu54gcbtjdl"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_c4k0l"]
 [ext_resource type="Texture2D" uid="uid://c6dbdgrhj2dd" path="res://assets/karate_man/km_backward-dash-1.png" id="2_0k7bq"]
@@ -90,7 +90,14 @@
 [ext_resource type="Texture2D" uid="uid://b7700kk3a7yf5" path="res://assets/karate_man/km_intro-0034.png" id="48_2d7o3"]
 [ext_resource type="Script" uid="uid://c0yojph012rf3" path="res://Scripts/States/AirState.gd" id="48_rkb3y"]
 [ext_resource type="Script" uid="uid://cxeboek0ewyqj" path="res://Scripts/States/LandingState.gd" id="49_ijipl"]
+[ext_resource type="Texture2D" uid="uid://cf2ndd8ag82r8" path="res://assets/karate_man/km_intro-dido-0001.png" id="49_xcvhy"]
+[ext_resource type="Texture2D" uid="uid://23n6x8g32or4" path="res://assets/karate_man/km_intro-dido-0007.png" id="50_emfaa"]
 [ext_resource type="Script" uid="uid://bq3aol5h5kvmc" path="res://Scripts/States/state_debug_label.gd" id="50_rkb3y"]
+[ext_resource type="Texture2D" uid="uid://dxbtq2dvyo8qd" path="res://assets/karate_man/km_intro-dido-0008.png" id="51_fro8x"]
+[ext_resource type="Texture2D" uid="uid://b1pc6406ylgg5" path="res://assets/karate_man/km_intro-dido-0015.png" id="52_77chy"]
+[ext_resource type="Texture2D" uid="uid://elbpf6jm5unk" path="res://assets/karate_man/km_intro-dido-0016.png" id="53_u13eq"]
+[ext_resource type="Texture2D" uid="uid://c6lchge7v1pma" path="res://assets/karate_man/km_intro-dido-0051.png" id="54_krvq8"]
+[ext_resource type="Texture2D" uid="uid://cmc13fgvqm142" path="res://assets/karate_man/km_intro-dido-0055.png" id="55_ylmai"]
 [ext_resource type="Script" uid="uid://bq8nd45sy4qsb" path="res://Scripts/States/CrouchingState.gd" id="64_l6bev"]
 [ext_resource type="Texture2D" uid="uid://d0is5iwit3gla" path="res://assets/karate_man/km_special-v1-1.png" id="66_nq1pv"]
 [ext_resource type="Texture2D" uid="uid://b74xq4cwpy3il" path="res://assets/karate_man/km_special-v1-2.png" id="67_35gtw"]
@@ -334,6 +341,32 @@ animations = [{
 }],
 "loop": true,
 "name": &"intro",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_xcvhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_emfaa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_fro8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_77chy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_u13eq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_krvq8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_ylmai")
+}],
+"loop": true,
+"name": &"intro dido",
 "speed": 5.0
 }, {
 "frames": [{
