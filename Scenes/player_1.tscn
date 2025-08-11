@@ -1,4 +1,4 @@
-[gd_scene load_steps=245 format=3 uid="uid://cwcu54gcbtjdl"]
+[gd_scene load_steps=246 format=3 uid="uid://cwcu54gcbtjdl"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_c4k0l"]
 [ext_resource type="Texture2D" uid="uid://c6dbdgrhj2dd" path="res://assets/karate_man/km_backward-dash-1.png" id="2_0k7bq"]
@@ -1856,6 +1856,35 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
 }
 
+[sub_resource type="Animation" id="Animation_u13eq"]
+resource_name = "taunt"
+length = 4.20834
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"taunt"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.333333, 0.458333, 1.16667, 1.29167, 1.41667, 1.54167, 1.625, 2.54167, 3, 3.91667, 4.16667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mndha"]
 _data = {
 &"backward_dash": SubResource("Animation_emfaa"),
@@ -1880,6 +1909,7 @@ _data = {
 &"skrrt": SubResource("Animation_77chy"),
 &"sprint": SubResource("Animation_fro8x"),
 &"standing": ExtResource("34_ty4o1"),
+&"taunt": SubResource("Animation_u13eq"),
 &"walking": SubResource("Animation_vmi10")
 }
 
