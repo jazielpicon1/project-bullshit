@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://hesxj7uatmot"]
+
+[ext_resource type="PackedScene" uid="uid://cwcu54gcbtjdl" path="res://Scenes/player_1.tscn" id="1_wkcja"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkara"]
+resource_local_to_scene = true
+size = Vector2(90, 142.25)
+
+[node name="Player2" instance=ExtResource("1_wkcja")]
+
+[node name="MeleeHitbox" parent="AnimatedSprite2D" index="1"]
+collision_layer = 2
+
+[node name="CollisionShape2D" parent="AnimatedSprite2D/MeleeHitbox" index="0"]
+shape = SubResource("RectangleShape2D_mkara")
+
+[node name="Hurtbox" parent="AnimatedSprite2D" index="2"]
+collision_mask = 4
