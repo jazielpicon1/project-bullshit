@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var state_machine: StateMachine = $StateMachine
 @export var maxSpeed : float = 200.0
 @export var jumpVelocity : float = -900.0
+@export var playerID = 1
+@export var health: Health
 
 # Gets the default velocity of gravity from the project settings (980 px/s^2)
 var gravity = 2200
@@ -37,7 +39,7 @@ func _physics_process(delta):
 	#for movement on the floor. LATERAL MOVE!!
 	if not attack_animation:
 		if is_on_floor():
-			direction = Input.get_vector("Walk Backwards","Walk Forward", "Crouch","Jump")
+			direction = Input.get_vector("Walk Backwards_%s" % [playerID],"Walk Forward_%s" % [playerID], "Crouch_%s" % [playerID],"Jump_%s" % [playerID])
 			if direction.x != 0 && state_machine.check_if_can_move():
 				velocity.x = direction.x * maxSpeed
 			else:
@@ -46,7 +48,7 @@ func _physics_process(delta):
 			velocity.x - velocity.x
 	
 	#Resumes movement after attack animation is finished
-	if Input.is_action_just_released("Attack Button"):
+	if Input.is_action_just_released("Attack Button_%s" % [playerID]):
 		resume_motion()
 
 	move_and_slide()
@@ -78,7 +80,14 @@ func resume_motion():
 	else:
 		velocity.x = move_toward(velocity.x, 0, maxSpeed)
 	
+func take_damage(amount : int) -> void:
+	print("Damage Taken: ", amount)
+	health.health -= amount
+	health.set_health(health.health - amount)
+	if health.health == 0:
+		print("Its over dude...")
+	print("Remaining Health: ", health.health)
+	
 
-func _on_melee_hitbox_area_entered(area: Area2D) -> void:
-	if area.is_in_group("Hurtbox"):
-		area.take_damage()
+func _on_health_health_depleted() -> void:
+	print("Its over dude...")

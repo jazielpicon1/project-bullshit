@@ -6,6 +6,7 @@ class_name GroundState
 @export var jumpVelocity : float = -900.0
 @export var air_state : State
 @export var crouching_state : State
+@export var playerID = 1
 var timer : Timer
 enum {Punch, Kick, Right, Left, Down}
 var Sequence : Array = []
@@ -15,24 +16,24 @@ var names : Array = MoveSetManager.karateManMoves.keys()
 
 func state_input(event : InputEvent):
 	#Handles the jump animation.
-	if(event.is_action_pressed("Jump")):
+	if(event.is_action_pressed("Jump_%s" % [playerID])):
 		jump()
 	#Handles the attack animations on the ground.
-	if(event.is_action_pressed("Attack Button")):
+	if(event.is_action_pressed("Attack Button_%s" % [playerID])):
 		get_input()
-	if(event.is_action_pressed("Crouch")):
+	if(event.is_action_pressed("Crouch_%s" % [playerID])):
 		crouch()
 	if not event is InputEventKey:
 		return
 	if not event.is_pressed():
 		return
-	if event.is_action_pressed("Down"):
+	if event.is_action_pressed("Down_%s" % [playerID]):
 		add_input_to_sequence(Down)
-	elif event.is_action_pressed("Right"):
+	elif event.is_action_pressed("Right_%s" % [playerID]):
 		add_input_to_sequence(Right)
-	elif event.is_action_pressed("Punch"):
+	elif event.is_action_pressed("Punch_%s" % [playerID]):
 		add_input_to_sequence(Punch)
-	elif event.is_action_pressed("Left") and character.scale.x >= -0.2:
+	elif event.is_action_pressed("Left_%s" % [playerID]) and character.scale.x >= -0.2:
 		add_input_to_sequence(Right)
 	timer.start()
 	check_sequence()	
@@ -54,24 +55,24 @@ func stop_motion():
 
 #Gets input from the user and plays the according animation
 func get_input():
-	if Input.is_action_just_pressed("Light Punch"):
+	if Input.is_action_just_pressed("Light Punch_%s" % [playerID]):
 		playback.travel("Karate Man animations_light_punch")
 		$LightPunchSfx.play()
 		character.attack_animation = true
 		stop_motion()
 		return
-	if Input.is_action_just_pressed("Heavy Punch"):
+	if Input.is_action_just_pressed("Heavy Punch_%s" % [playerID]):
 		playback.travel("Karate Man animations_heavy punch")
 		$HeavyPunchSfx.play()
 		character.attack_animation = true
 		stop_motion()
 		return
-	if Input.is_action_just_pressed("Light Kick"):
+	if Input.is_action_just_pressed("Light Kick_%s" % [playerID]):
 		playback.travel("Karate Man animations_light kick")
 		character.attack_animation = true
 		stop_motion()
 		return
-	if Input.is_action_just_pressed("Heavy Kick"):
+	if Input.is_action_just_pressed("Heavy Kick_%s" % [playerID]):
 		playback.travel("Karate Man animations_heavy kick")
 		$HeavyKickSfx.play()
 		character.attack_animation = true

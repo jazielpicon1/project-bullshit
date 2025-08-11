@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://d3dyok7ue81il"]
+[gd_scene load_steps=9 format=4 uid="uid://d3dyok7ue81il"]
 
 [ext_resource type="Texture2D" uid="uid://cy4dvkyufdji" path="res://assets/Stages/training stage 3.0.jpg" id="1_mdeio"]
 [ext_resource type="Script" uid="uid://cn6ptqpfo258b" path="res://Scripts/test_room.gd" id="1_q6l42"]
 [ext_resource type="PackedScene" uid="uid://cwcu54gcbtjdl" path="res://Scenes/player_1.tscn" id="2_q6l42"]
+[ext_resource type="PackedScene" uid="uid://g2yiaauxibme" path="res://Scenes/player_2.tscn" id="4_wtyfb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k5f4k"]
 distance = 1.0
@@ -6286,7 +6287,10 @@ use_parent_material = true
 tile_set = SubResource("TileSet_6phgx")
 
 [node name="Player1" parent="." instance=ExtResource("2_q6l42")]
-position = Vector2(125.27, 220.999)
+position = Vector2(126.264, 223.959)
+
+[node name="Player2" parent="." instance=ExtResource("4_wtyfb")]
+position = Vector2(973.326, 219.026)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(702.5, 225)
