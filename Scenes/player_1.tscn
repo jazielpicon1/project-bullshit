@@ -1,4 +1,4 @@
-[gd_scene load_steps=246 format=3 uid="uid://cwcu54gcbtjdl"]
+[gd_scene load_steps=247 format=3 uid="uid://cwcu54gcbtjdl"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_c4k0l"]
 [ext_resource type="Texture2D" uid="uid://c6dbdgrhj2dd" path="res://assets/karate_man/km_backward-dash-1.png" id="2_0k7bq"]
@@ -1885,6 +1885,35 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 }
 
+[sub_resource type="Animation" id="Animation_krvq8"]
+resource_name = "loose timer"
+length = 1.875
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"loose timer"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.375, 0.458333, 1.04167, 1.375, 1.70833, 1.75, 1.83333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mndha"]
 _data = {
 &"backward_dash": SubResource("Animation_emfaa"),
@@ -1905,6 +1934,7 @@ _data = {
 &"karate lunge startup": SubResource("Animation_35gtw"),
 &"light kick": SubResource("Animation_41bo0"),
 &"light punch": SubResource("Animation_jkush"),
+&"loose timer": SubResource("Animation_krvq8"),
 &"normal kick": SubResource("Animation_uotsj"),
 &"skrrt": SubResource("Animation_77chy"),
 &"sprint": SubResource("Animation_fro8x"),
