@@ -1,4 +1,4 @@
-[gd_scene load_steps=330 format=3 uid="uid://cwcu54gcbtjdl"]
+[gd_scene load_steps=346 format=3 uid="uid://cwcu54gcbtjdl"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_c4k0l"]
 [ext_resource type="Texture2D" uid="uid://c6dbdgrhj2dd" path="res://assets/karate_man/km_backward-dash-1.png" id="2_0k7bq"]
@@ -218,6 +218,21 @@
 [ext_resource type="Script" uid="uid://q626j3skc017" path="res://Scripts/hitbox.gd" id="160_2aarq"]
 [ext_resource type="Script" uid="uid://csbr8uswbqlaa" path="res://Scripts/hurtbox.gd" id="160_35b2c"]
 [ext_resource type="AudioStream" uid="uid://nc24p8xfutme" path="res://Sounds/sfx/oughouch.mp3" id="162_2aarq"]
+[ext_resource type="Texture2D" uid="uid://cfopcgr25pv2t" path="res://assets/karate_man/km_win-1.png" id="202_08btr"]
+[ext_resource type="Texture2D" uid="uid://bkcfrun21p528" path="res://assets/karate_man/km_win-2.png" id="203_mse1p"]
+[ext_resource type="Texture2D" uid="uid://dg876wd4ovcda" path="res://assets/karate_man/km_win-3.png" id="204_qhqg5"]
+[ext_resource type="Texture2D" uid="uid://bg0scqqjmi73y" path="res://assets/karate_man/km_win-4.png" id="205_osylr"]
+[ext_resource type="Texture2D" uid="uid://ctj4wt4swybjr" path="res://assets/karate_man/km_win-5.png" id="206_fiymn"]
+[ext_resource type="Texture2D" uid="uid://dqo2fontmy08n" path="res://assets/karate_man/km_win-6.png" id="207_lk10v"]
+[ext_resource type="Texture2D" uid="uid://bixl3akrqv6m2" path="res://assets/karate_man/km_win-7.png" id="208_ianya"]
+[ext_resource type="Texture2D" uid="uid://dqv3hodf11x36" path="res://assets/karate_man/km_win-8.png" id="209_rqwy7"]
+[ext_resource type="Texture2D" uid="uid://dn1w0sektcouy" path="res://assets/karate_man/km_win-9.png" id="210_vti6w"]
+[ext_resource type="Texture2D" uid="uid://clpaeiu1r876l" path="res://assets/karate_man/km_win-10.png" id="211_s5df2"]
+[ext_resource type="Texture2D" uid="uid://dlco1yvhdrhjb" path="res://assets/karate_man/km_win-11.png" id="212_ujs5h"]
+[ext_resource type="Texture2D" uid="uid://ebbpnc3yxnp4" path="res://assets/karate_man/km_win-12.png" id="213_0e7rd"]
+[ext_resource type="Texture2D" uid="uid://q7b6se61frlq" path="res://assets/karate_man/km_win-13.png" id="214_ca4cc"]
+[ext_resource type="Texture2D" uid="uid://dm65tk5nboehc" path="res://assets/karate_man/km_win-14.png" id="215_mfm55"]
+[ext_resource type="Texture2D" uid="uid://buhseaqx6p53" path="res://assets/karate_man/km_win-15.png" id="216_s4pky"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfbq2"]
 animations = [{
@@ -981,6 +996,56 @@ animations = [{
 }],
 "loop": true,
 "name": &"taunt",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("202_08btr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_mse1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_qhqg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_osylr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_fiymn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_lk10v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_ianya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_rqwy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_vti6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_s5df2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_ujs5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_0e7rd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_ca4cc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_mfm55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_s4pky")
+}],
+"loop": true,
+"name": &"win",
 "speed": 5.0
 }]
 
@@ -2669,6 +2734,35 @@ tracks/1/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_16bxu"]
+resource_name = "win"
+length = 1.20834
+step = 0.0416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"win"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0833333, 0.166667, 0.25, 0.333333, 0.416667, 0.458333, 0.583333, 0.625, 0.708333, 0.791667, 0.875, 1.04167, 1.125, 1.16667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mndha"]
 _data = {
 &"backward_dash": SubResource("Animation_emfaa"),
@@ -2711,7 +2805,8 @@ _data = {
 &"sprint": SubResource("Animation_fro8x"),
 &"standing": ExtResource("34_ty4o1"),
 &"taunt": SubResource("Animation_u13eq"),
-&"walking": SubResource("Animation_vmi10")
+&"walking": SubResource("Animation_vmi10"),
+&"win": SubResource("Animation_16bxu")
 }
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_nq1pv"]
