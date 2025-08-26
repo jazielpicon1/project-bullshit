@@ -2,16 +2,30 @@ extends State
 
 class_name GroundState
 
+#All the variables you will see and be able to change in the inspector tab
 @export var HeavyKick : State
 @export var jumpVelocity : float = -900.0
 @export var air_state : State
 @export var crouching_state : State
+@export var dead_state : State
+@export var dash_state : State
 @export var playerID = 1
+@export var health: Health
+@export var specialMove_state : State
+@export var dash_speed : float = 1800.0
+
+#A bunch of bullshit
+var dashing : bool = false
+var can_dash = true
+var isBlocking : bool = false
+var isCrouching : bool = false
 var timer : Timer
 enum {Punch, Kick, Right, Left, Down}
 var Sequence : Array = []
 var names : Array = MoveSetManager.karateManMoves.keys()
-@export var specialMove_state : State
+
+func on_enter():
+	isCrouching = false
 
 
 func state_input(event : InputEvent):
@@ -23,21 +37,29 @@ func state_input(event : InputEvent):
 		get_input()
 	if(event.is_action_pressed("Crouch_%s" % [playerID])):
 		crouch()
+	if(event.is_action_pressed("Block_%s" % [playerID])):
+		isBlocking = true
+	if(event.is_action_released("Block_%s" % [playerID])):
+		isBlocking = false
 	if not event is InputEventKey:
 		return
 	if not event.is_pressed():
 		return
+	#Adds all the input from the player in to a input buffer system
 	if event.is_action_pressed("Down_%s" % [playerID]):
 		add_input_to_sequence(Down)
 	elif event.is_action_pressed("Right_%s" % [playerID]):
 		add_input_to_sequence(Right)
 	elif event.is_action_pressed("Punch_%s" % [playerID]):
 		add_input_to_sequence(Punch)
-	elif event.is_action_pressed("Left_%s" % [playerID]) and character.scale.x >= -0.2:
+	elif event.is_action_pressed("Left_%s" % [playerID]):
+		add_input_to_sequence(Left)
+	elif event.is_action_pressed("Left_%s" % [playerID]) and character.scale.x == -1:
 		add_input_to_sequence(Right)
 	timer.start()
 	check_sequence()	
 
+#I don't need to explain these
 func jump():
 	character.velocity.y = jumpVelocity
 	next_state = air_state
@@ -45,6 +67,7 @@ func jump():
 
 func crouch():
 	character.velocity.x = 0
+	isCrouching = true
 	next_state = crouching_state
 	playback.travel("crouch")
 	
@@ -81,22 +104,23 @@ func get_input():
 		return
 		
 		
-
+#Clears the input buffer when player fails to input the correct sequence
 func _on_timeout():
-	print("You suck")
 	Sequence = []
 
+#Starts the timer for the input buffer
 func _ready() -> void:
 	timer = Timer.new()
 	add_child(timer)
-	timer.wait_time = 1
+	timer.wait_time = 0.5
 	timer.one_shot = true
 	timer.timeout.connect(_on_timeout)
 
+#Self-explanatory
 func add_input_to_sequence(button : int):
 	Sequence.push_back(button)
 	
-
+#Checks the input buffer to see if the players input matches one of the sequences in their corresponding moveset
 func check_sequence()->void:
 	for Name in names:
 		var combo:Array = MoveSetManager.karateManMoves[Name] #Give sequence of current Combo
@@ -108,17 +132,48 @@ func check_sequence()->void:
 			print("Special Move: ", Name)
 			$LightPunchSfx.stop()
 			$HeavyPunchSfx.stop()
-			$KarateLungeSfx.play()
 			$KarateLungeSuccessNoise.play()
-			playback.travel("Karate Man animations_karate lunge")
-			next_state = specialMove_state
+			if Name == "Karate Lunge" or Name == "Karate Lunge Reversed":
+				playback.travel("Karate Man animations_karate lunge")
+				next_state = specialMove_state
+				$KarateLungeSfx.play()
+			if Name == "Karate Taunt":
+				playback.travel("Karate Man animations_taunt")
+				next_state = specialMove_state
+			if Name == "Karate Dash" and can_dash:
+				playback.travel("Karate Man animations_forward_dash")
+				dashing = true
+				can_dash = false
+				next_state = dash_state
+				$dash_timer.start()
+				$dash_again_timer.start()
 			Sequence = [] #clear input sequence
 			return
 
 
+#Handles the processes that occur once a hitbox enter a hurtbox(i.e playing the hurt animation, receiving damage, etc)
+func _on_hurtbox_area_entered(hitbox: Hitbox) -> void:
+	if hitbox != null and isBlocking != true and isCrouching != true:
+		print("Damage Taken: ", hitbox.damage)
+		health.health -= hitbox.damage
+		health.set_health(health.health - hitbox.damage)
+		playback.travel("Karate Man animations_hurt-light_standing")
+	elif isBlocking == true:
+		var newDamage = 0
+		health.health -= newDamage
+		health.set_health(health.health - newDamage)
+		playback.travel("Karate Man animations_block_standing")
+		print("Damage Taken: ", newDamage)
+	if health.health == 0:
+		print("Its over dude...")
+		next_state = dead_state
+		playback.travel("Karate Man animations_dead")
+	print("Remaining Health: ", health.health)
 
+#Finishes the dash animation once the timer finishes
+func _on_dash_timer_timeout() -> void:
+	dashing = false
 
-#func enterheavykickstate_():
-	#if Input.is_action_just_pressed("Heavy Kick"):
-		#next_state = HeavyKick
-		
+#Cooldown until the player can dash again
+func _on_dash_again_timer_timeout() -> void:
+	can_dash = true

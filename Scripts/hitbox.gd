@@ -1,6 +1,8 @@
 class_name Hitbox
 extends Area2D
 
+var attack_type : StringName
+#Test damage(subject to change for difference attack and moves)
 @export var damage := 10
 
 
