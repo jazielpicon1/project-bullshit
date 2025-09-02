@@ -1,15 +1,20 @@
 class_name Player1
 extends CharacterBody2D
 
-
 @onready var animation_tree : AnimationTree = $AnimationTree
 @onready var state_machine: StateMachine = $StateMachine
+@onready var healthbar = $Heathbar
+#All the variables you will see and be able to change in the inspector tab
 @export var maxSpeed : float = 200.0
 @export var jumpVelocity : float = -900.0
+@export var dash_speed : float = 500.0
 @export var playerID = 1
-@export var health: Health
+@export var current_state : State
+@export var dash_state : State
+@export var health : Health
+#@export var health: Health
 
-# Gets the default velocity of gravity from the project settings (980 px/s^2)
+#Regular Degular variables
 var gravity = 2200
 var animation_locked : bool = false
 var attack_animation : bool = false
@@ -17,10 +22,12 @@ var direction : Vector2 = Vector2.ZERO
 var last_direction := Vector2(1,0)
 var was_in_air : bool = false
 var is_jumping : bool = false
+var is_dashing : bool = false
 
 #sets state machine with the animations from the animation tree
 func _ready():
 	animation_tree.active = true
+	healthbar.init_health(health.health)
 
 func _physics_process(delta):
 	#Adds gravity to the characters
@@ -46,6 +53,16 @@ func _physics_process(delta):
 				velocity.x = move_toward(velocity.x, 0, maxSpeed)
 		else:
 			velocity.x - velocity.x
+		#Checks to see if player is Dashing
+		if state_machine.current_state == dash_state:
+			is_dashing = true
+		else:
+			if is_dashing:
+				is_dashing = false
+		#Changes the player's speed while they are dashing
+		if is_dashing:
+			velocity.x = direction.x * dash_speed
+
 	
 	#Resumes movement after attack animation is finished
 	if Input.is_action_just_released("Attack Button_%s" % [playerID]):
@@ -58,11 +75,9 @@ func update_animation():
 	animation_tree.set("parameters/Walk/blend_position", direction.x)
 	if not animation_locked:
 		if direction.x != 0: 
-			#animation_tree.travel("Karate Man animations_walking")
 			$AnimatedSprite2D.play("kennywalk")
 		else:
 			$AnimatedSprite2D.play("standing")
-			#animation_tree.travel("Karate Man animations_standing")
 
 # Update facing direction
 func update_facing_direction():
@@ -79,15 +94,10 @@ func resume_motion():
 		velocity.x = direction.x * maxSpeed
 	else:
 		velocity.x = move_toward(velocity.x, 0, maxSpeed)
-	
-func take_damage(amount : int) -> void:
-	print("Damage Taken: ", amount)
-	health.health -= amount
-	health.set_health(health.health - amount)
-	if health.health == 0:
-		print("Its over dude...")
-	print("Remaining Health: ", health.health)
+		
 	
 
-func _on_health_health_depleted() -> void:
-	print("Its over dude...")
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	healthbar.health = health.health

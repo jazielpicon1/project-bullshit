@@ -1,3 +1,4 @@
+#DO NOT TOUCH THIS NODE!!!!!!
 extends Node
 
 class_name StateMachine
@@ -6,7 +7,6 @@ class_name StateMachine
 @export var current_state : State
 @export var animation_tree : AnimationTree
 
- 
 var states : Array[State]
 
 func _ready():

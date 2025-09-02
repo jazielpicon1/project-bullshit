@@ -12,7 +12,7 @@ signal health_depleted
 @onready var health: int = max_health : get = get_health
 
 
-
+#Sets the player's max health to the value in the parameters
 func set_max_health(value: int):
 	var clamped_value = 1 if value <= 0 else value
 	
@@ -27,11 +27,11 @@ func set_max_health(value: int):
 
 func get_max_health():
 	return max_health
-	
+
+#Sets the player's health to the value in the parameters
 func set_health(value: int):
 	if value < health:
 		return
-			
 	var clamped_value = clampi(value, 0, max_health)
 	
 	if clamped_value != health:
