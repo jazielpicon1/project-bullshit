@@ -26,3 +26,6 @@ playerID = 2
 
 [node name="Crouching" parent="StateMachine" index="3"]
 playerID = 2
+
+[node name="Dashing" parent="StateMachine" index="7"]
+playerID = 2

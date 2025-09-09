@@ -1,4 +1,4 @@
-[gd_scene load_steps=367 format=3 uid="uid://cs73ilr7xvmpk"]
+[gd_scene load_steps=375 format=3 uid="uid://cs73ilr7xvmpk"]
 
 [ext_resource type="Script" uid="uid://dkp00fykuwao3" path="res://Scripts/player_1.gd" id="1_c4k0l"]
 [ext_resource type="Texture2D" uid="uid://c6dbdgrhj2dd" path="res://assets/karate_man/km_backward-dash-1.png" id="2_0k7bq"]
@@ -234,8 +234,11 @@
 [ext_resource type="Texture2D" uid="uid://q7b6se61frlq" path="res://assets/karate_man/km_win-13.png" id="214_ca4cc"]
 [ext_resource type="Texture2D" uid="uid://dm65tk5nboehc" path="res://assets/karate_man/km_win-14.png" id="215_mfm55"]
 [ext_resource type="Texture2D" uid="uid://buhseaqx6p53" path="res://assets/karate_man/km_win-15.png" id="216_s4pky"]
+[ext_resource type="AudioStream" uid="uid://babx3hxjvpjom" path="res://Sounds/sfx/Kamen Rider Punch 3.mp3" id="218_fiymn"]
 [ext_resource type="Script" uid="uid://dfy13jyswwuax" path="res://Scenes/dashing.gd" id="234_qhqg5"]
+[ext_resource type="Script" uid="uid://cswwhtwddpk7l" path="res://Scenes/skrrtState.gd" id="236_lk10v"]
 [ext_resource type="PackedScene" uid="uid://dpdd1aopkvgo7" path="res://Scenes/heathbar.tscn" id="236_osylr"]
+[ext_resource type="Script" uid="uid://c8h1e4n16ul37" path="res://Scenes/hitState.gd" id="237_ianya"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfbq2"]
 animations = [{
@@ -2893,6 +2896,12 @@ animation = &"Karate Man animations/light kick"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_lp8rx"]
 animation = &"Karate Man animations/light punch"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vti6w"]
+animation = &"Karate Man animations/skrrt"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rqwy7"]
+animation = &"Karate Man animations/sprint"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_qhqg5"]
 animation = &"Karate Man animations/taunt"
 
@@ -3071,6 +3080,14 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s4pky"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_16bxu"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qnchu"]
+switch_mode = 2
+advance_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_qrwht"]
 "states/Karate Man animations_block_crouching/node" = SubResource("AnimationNodeAnimation_ianya")
 "states/Karate Man animations_block_crouching/position" = Vector2(685.24, 62.1534)
@@ -3110,6 +3127,10 @@ advance_mode = 2
 "states/Karate Man animations_light kick/position" = Vector2(289.092, 267.025)
 "states/Karate Man animations_light_punch/node" = SubResource("AnimationNodeAnimation_lp8rx")
 "states/Karate Man animations_light_punch/position" = Vector2(223, 181)
+"states/Karate Man animations_skrrt/node" = SubResource("AnimationNodeAnimation_vti6w")
+"states/Karate Man animations_skrrt/position" = Vector2(510.99, 370.561)
+"states/Karate Man animations_sprint/node" = SubResource("AnimationNodeAnimation_rqwy7")
+"states/Karate Man animations_sprint/position" = Vector2(584.24, 296.82)
 "states/Karate Man animations_taunt/node" = SubResource("AnimationNodeAnimation_qhqg5")
 "states/Karate Man animations_taunt/position" = Vector2(-665.444, 138.993)
 states/Start/position = Vector2(109, 73)
@@ -3121,8 +3142,8 @@ states/crouch-loop/node = SubResource("AnimationNodeAnimation_q6xjm")
 states/crouch-loop/position = Vector2(-116.974, -44.761)
 "states/jump punch/node" = SubResource("AnimationNodeAnimation_th1ls")
 "states/jump punch/position" = Vector2(-620.444, 267.025)
-transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_5lk5x"), "Walk", "Karate Man animations_jump-start", SubResource("AnimationNodeStateMachineTransition_ijipl"), "Karate Man animations_jump-fall", "Karate Man animations_jump-fall-loop", SubResource("AnimationNodeStateMachineTransition_rkb3y"), "Karate Man animations_jump-start", "Karate Man animations_jump-loop", SubResource("AnimationNodeStateMachineTransition_of62n"), "Karate Man animations_jump-loop", "Karate Man animations_jump-fall", SubResource("AnimationNodeStateMachineTransition_82lt2"), "Karate Man animations_light_punch", "Walk", SubResource("AnimationNodeStateMachineTransition_658bf"), "Walk", "Karate Man animations_light_punch", SubResource("AnimationNodeStateMachineTransition_ymmlu"), "Karate Man animations_heavy kick", "Walk", SubResource("AnimationNodeStateMachineTransition_kfi4n"), "Walk", "Karate Man animations_heavy kick", SubResource("AnimationNodeStateMachineTransition_3we4x"), "Karate Man animations_light kick", "Walk", SubResource("AnimationNodeStateMachineTransition_h8i1p"), "Walk", "Karate Man animations_light kick", SubResource("AnimationNodeStateMachineTransition_1m8ld"), "Karate Man animations_heavy punch", "Walk", SubResource("AnimationNodeStateMachineTransition_y5ntg"), "Walk", "Karate Man animations_heavy punch", SubResource("AnimationNodeStateMachineTransition_jqblu"), "Walk", "crouch", SubResource("AnimationNodeStateMachineTransition_qygew"), "crouch", "crouch-loop", SubResource("AnimationNodeStateMachineTransition_xvfab"), "crouch-loop", "Walk", SubResource("AnimationNodeStateMachineTransition_xeul7"), "Karate Man animations_crouch punch", "crouch-loop", SubResource("AnimationNodeStateMachineTransition_th1ls"), "crouch-loop", "Karate Man animations_crouch punch", SubResource("AnimationNodeStateMachineTransition_nch0q"), "Karate Man animations_crouch kick", "crouch-loop", SubResource("AnimationNodeStateMachineTransition_dau7q"), "crouch-loop", "Karate Man animations_crouch kick", SubResource("AnimationNodeStateMachineTransition_gcs77"), "Walk", "Karate Man animations_karate lunge", SubResource("AnimationNodeStateMachineTransition_6i1ax"), "Karate Man animations_karate lunge", "Walk", SubResource("AnimationNodeStateMachineTransition_ucmjy"), "Karate Man animations_jump-start", "jump punch", SubResource("AnimationNodeStateMachineTransition_3klhb"), "Karate Man animations_jump-loop", "jump punch", SubResource("AnimationNodeStateMachineTransition_vykxt"), "Karate Man animations_jump-fall", "jump punch", SubResource("AnimationNodeStateMachineTransition_hux36"), "Karate Man animations_jump-fall-loop", "jump punch", SubResource("AnimationNodeStateMachineTransition_iv8fm"), "Karate Man animations_jump-fall-loop", "Karate Man animations_jump kick", SubResource("AnimationNodeStateMachineTransition_2ubf4"), "Karate Man animations_jump-fall", "Karate Man animations_jump kick", SubResource("AnimationNodeStateMachineTransition_ayeoi"), "Karate Man animations_jump-loop", "Karate Man animations_jump kick", SubResource("AnimationNodeStateMachineTransition_wovm7"), "Karate Man animations_jump-start", "Karate Man animations_jump kick", SubResource("AnimationNodeStateMachineTransition_0k7bq"), "Karate Man animations_jump-fall-loop", "Karate Man animations_jump-end", SubResource("AnimationNodeStateMachineTransition_kg83o"), "Karate Man animations_jump-fall", "Karate Man animations_jump-end", SubResource("AnimationNodeStateMachineTransition_kured"), "Karate Man animations_jump-end", "Walk", SubResource("AnimationNodeStateMachineTransition_joleq"), "Karate Man animations_jump kick", "Karate Man animations_jump-fall", SubResource("AnimationNodeStateMachineTransition_vn032"), "Karate Man animations_jump kick", "Karate Man animations_jump-end", SubResource("AnimationNodeStateMachineTransition_ormha"), "jump punch", "Karate Man animations_jump-end", SubResource("AnimationNodeStateMachineTransition_ig2xa"), "jump punch", "Karate Man animations_jump-fall", SubResource("AnimationNodeStateMachineTransition_1wlwd"), "Walk", "Karate Man animations_dead", SubResource("AnimationNodeStateMachineTransition_qnjfm"), "Walk", "Karate Man animations_hurt-light_standing", SubResource("AnimationNodeStateMachineTransition_qhqg5"), "Karate Man animations_hurt-light_standing", "Walk", SubResource("AnimationNodeStateMachineTransition_osylr"), "Walk", "Karate Man animations_taunt", SubResource("AnimationNodeStateMachineTransition_fiymn"), "Karate Man animations_taunt", "Walk", SubResource("AnimationNodeStateMachineTransition_lk10v"), "Walk", "Karate Man animations_forward_dash", SubResource("AnimationNodeStateMachineTransition_ianya"), "Karate Man animations_forward_dash", "Walk", SubResource("AnimationNodeStateMachineTransition_rqwy7"), "Walk", "Karate Man animations_block_standing", SubResource("AnimationNodeStateMachineTransition_vti6w"), "Karate Man animations_block_standing", "Walk", SubResource("AnimationNodeStateMachineTransition_s5df2"), "Walk", "Karate Man animations_hurt-light_crouch", SubResource("AnimationNodeStateMachineTransition_ujs5h"), "Karate Man animations_hurt-light_crouch", "Walk", SubResource("AnimationNodeStateMachineTransition_0e7rd"), "Walk", "Karate Man animations_block_crouching", SubResource("AnimationNodeStateMachineTransition_ca4cc"), "Karate Man animations_block_crouching", "Walk", SubResource("AnimationNodeStateMachineTransition_mfm55")]
-graph_offset = Vector2(-1039.76, 12.9929)
+transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition_5lk5x"), "Walk", "Karate Man animations_jump-start", SubResource("AnimationNodeStateMachineTransition_ijipl"), "Karate Man animations_jump-fall", "Karate Man animations_jump-fall-loop", SubResource("AnimationNodeStateMachineTransition_rkb3y"), "Karate Man animations_jump-start", "Karate Man animations_jump-loop", SubResource("AnimationNodeStateMachineTransition_of62n"), "Karate Man animations_jump-loop", "Karate Man animations_jump-fall", SubResource("AnimationNodeStateMachineTransition_82lt2"), "Karate Man animations_light_punch", "Walk", SubResource("AnimationNodeStateMachineTransition_658bf"), "Walk", "Karate Man animations_light_punch", SubResource("AnimationNodeStateMachineTransition_ymmlu"), "Karate Man animations_heavy kick", "Walk", SubResource("AnimationNodeStateMachineTransition_kfi4n"), "Walk", "Karate Man animations_heavy kick", SubResource("AnimationNodeStateMachineTransition_3we4x"), "Karate Man animations_light kick", "Walk", SubResource("AnimationNodeStateMachineTransition_h8i1p"), "Walk", "Karate Man animations_light kick", SubResource("AnimationNodeStateMachineTransition_1m8ld"), "Karate Man animations_heavy punch", "Walk", SubResource("AnimationNodeStateMachineTransition_y5ntg"), "Walk", "Karate Man animations_heavy punch", SubResource("AnimationNodeStateMachineTransition_jqblu"), "Walk", "crouch", SubResource("AnimationNodeStateMachineTransition_qygew"), "crouch", "crouch-loop", SubResource("AnimationNodeStateMachineTransition_xvfab"), "crouch-loop", "Walk", SubResource("AnimationNodeStateMachineTransition_xeul7"), "Karate Man animations_crouch punch", "crouch-loop", SubResource("AnimationNodeStateMachineTransition_th1ls"), "crouch-loop", "Karate Man animations_crouch punch", SubResource("AnimationNodeStateMachineTransition_nch0q"), "Karate Man animations_crouch kick", "crouch-loop", SubResource("AnimationNodeStateMachineTransition_dau7q"), "crouch-loop", "Karate Man animations_crouch kick", SubResource("AnimationNodeStateMachineTransition_gcs77"), "Walk", "Karate Man animations_karate lunge", SubResource("AnimationNodeStateMachineTransition_6i1ax"), "Karate Man animations_karate lunge", "Walk", SubResource("AnimationNodeStateMachineTransition_ucmjy"), "Karate Man animations_jump-start", "jump punch", SubResource("AnimationNodeStateMachineTransition_3klhb"), "Karate Man animations_jump-loop", "jump punch", SubResource("AnimationNodeStateMachineTransition_vykxt"), "Karate Man animations_jump-fall", "jump punch", SubResource("AnimationNodeStateMachineTransition_hux36"), "Karate Man animations_jump-fall-loop", "jump punch", SubResource("AnimationNodeStateMachineTransition_iv8fm"), "Karate Man animations_jump-fall-loop", "Karate Man animations_jump kick", SubResource("AnimationNodeStateMachineTransition_2ubf4"), "Karate Man animations_jump-fall", "Karate Man animations_jump kick", SubResource("AnimationNodeStateMachineTransition_ayeoi"), "Karate Man animations_jump-loop", "Karate Man animations_jump kick", SubResource("AnimationNodeStateMachineTransition_wovm7"), "Karate Man animations_jump-start", "Karate Man animations_jump kick", SubResource("AnimationNodeStateMachineTransition_0k7bq"), "Karate Man animations_jump-fall-loop", "Karate Man animations_jump-end", SubResource("AnimationNodeStateMachineTransition_kg83o"), "Karate Man animations_jump-fall", "Karate Man animations_jump-end", SubResource("AnimationNodeStateMachineTransition_kured"), "Karate Man animations_jump-end", "Walk", SubResource("AnimationNodeStateMachineTransition_joleq"), "Karate Man animations_jump kick", "Karate Man animations_jump-fall", SubResource("AnimationNodeStateMachineTransition_vn032"), "Karate Man animations_jump kick", "Karate Man animations_jump-end", SubResource("AnimationNodeStateMachineTransition_ormha"), "jump punch", "Karate Man animations_jump-end", SubResource("AnimationNodeStateMachineTransition_ig2xa"), "jump punch", "Karate Man animations_jump-fall", SubResource("AnimationNodeStateMachineTransition_1wlwd"), "Walk", "Karate Man animations_dead", SubResource("AnimationNodeStateMachineTransition_qnjfm"), "Walk", "Karate Man animations_hurt-light_standing", SubResource("AnimationNodeStateMachineTransition_qhqg5"), "Karate Man animations_hurt-light_standing", "Walk", SubResource("AnimationNodeStateMachineTransition_osylr"), "Walk", "Karate Man animations_taunt", SubResource("AnimationNodeStateMachineTransition_fiymn"), "Karate Man animations_taunt", "Walk", SubResource("AnimationNodeStateMachineTransition_lk10v"), "Walk", "Karate Man animations_forward_dash", SubResource("AnimationNodeStateMachineTransition_ianya"), "Karate Man animations_forward_dash", "Walk", SubResource("AnimationNodeStateMachineTransition_rqwy7"), "Walk", "Karate Man animations_block_standing", SubResource("AnimationNodeStateMachineTransition_vti6w"), "Karate Man animations_block_standing", "Walk", SubResource("AnimationNodeStateMachineTransition_s5df2"), "Walk", "Karate Man animations_hurt-light_crouch", SubResource("AnimationNodeStateMachineTransition_ujs5h"), "Karate Man animations_hurt-light_crouch", "Walk", SubResource("AnimationNodeStateMachineTransition_0e7rd"), "Walk", "Karate Man animations_block_crouching", SubResource("AnimationNodeStateMachineTransition_ca4cc"), "Karate Man animations_block_crouching", "Walk", SubResource("AnimationNodeStateMachineTransition_mfm55"), "Karate Man animations_forward_dash", "Karate Man animations_sprint", SubResource("AnimationNodeStateMachineTransition_s4pky"), "Karate Man animations_sprint", "Karate Man animations_skrrt", SubResource("AnimationNodeStateMachineTransition_16bxu"), "Karate Man animations_skrrt", "Walk", SubResource("AnimationNodeStateMachineTransition_qnchu")]
+graph_offset = Vector2(-716.022, 181.882)
 
 [node name="Player1" type="CharacterBody2D" node_paths=PackedStringArray("current_state", "dash_state", "health") groups=["Player1", "States"]]
 script = ExtResource("1_c4k0l")
@@ -3161,6 +3182,10 @@ collision_mask = 2
 script = ExtResource("160_35b2c")
 metadata/_custom_type_script = "uid://csbr8uswbqlaa"
 
+[node name="PunchingNoise" type="AudioStreamPlayer2D" parent="AnimatedSprite2D/Hurtbox"]
+position = Vector2(-31, 298)
+stream = ExtResource("218_fiymn")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Hurtbox"]
 position = Vector2(108, 321.5)
 shape = SubResource("RectangleShape2D_2aarq")
@@ -3192,13 +3217,13 @@ character = NodePath("..")
 current_state = NodePath("Ground")
 animation_tree = NodePath("../AnimationTree")
 
-[node name="Ground" type="Node" parent="StateMachine" node_paths=PackedStringArray("HeavyKick", "air_state", "crouching_state", "dead_state", "dash_state", "health", "specialMove_state")]
+[node name="Ground" type="Node" parent="StateMachine" node_paths=PackedStringArray("air_state", "crouching_state", "dead_state", "dash_state", "hit_state", "health", "specialMove_state")]
 script = ExtResource("47_82lt2")
-HeavyKick = NodePath("../HeavyKick")
 air_state = NodePath("../Air")
 crouching_state = NodePath("../Crouching")
 dead_state = NodePath("../Dead")
 dash_state = NodePath("../Dashing")
+hit_state = NodePath("../Hit")
 health = NodePath("../../Health")
 specialMove_state = NodePath("../SpecialMove State")
 
@@ -3259,10 +3284,26 @@ can_move = false
 script = ExtResource("177_qnjfm")
 can_move = false
 
-[node name="Dashing" type="Node" parent="StateMachine" node_paths=PackedStringArray("ground_state")]
+[node name="Dashing" type="Node" parent="StateMachine" node_paths=PackedStringArray("ground_state", "skrrt_state")]
 script = ExtResource("234_qhqg5")
 DashingAnimName = "Karate Man animations/forward_dash"
 ground_state = NodePath("../Ground")
+skrrt_state = NodePath("../Skrrt")
+
+[node name="Skrrt" type="Node" parent="StateMachine" node_paths=PackedStringArray("ground_state")]
+script = ExtResource("236_lk10v")
+ground_state = NodePath("../Ground")
+can_move = false
+
+[node name="Hit" type="Node" parent="StateMachine" node_paths=PackedStringArray("ground_state", "health", "dead_state")]
+script = ExtResource("237_ianya")
+ground_state = NodePath("../Ground")
+health = NodePath("../../Health")
+dead_state = NodePath("../Dead")
+can_move = false
+
+[node name="StunTimer" type="Timer" parent="StateMachine/Hit"]
+wait_time = 0.555
 
 [node name="StateDebugLabel" type="Label" parent="." node_paths=PackedStringArray("state_machine")]
 offset_right = 148.0
@@ -3277,17 +3318,21 @@ offset_top = 39.0
 offset_right = 246.0
 offset_bottom = 59.0
 
-[connection signal="area_entered" from="AnimatedSprite2D/MeleeHitbox" to="." method="_on_melee_hitbox_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/MeleeHitbox" to="." method="_on_heavykick_hitbox_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite2D/MeleeHitbox" to="." method="_on_melee_hitbox_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite2D/MeleeHitbox" to="AnimatedSprite2D/MeleeHitbox" method="_on_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/Hurtbox" to="StateMachine/Ground" method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/Hurtbox" to="StateMachine/Crouching" method="_on_hurtbox_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite2D/Hurtbox" to="StateMachine/Hit" method="_on_hurtbox_area_entered"]
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="StateMachine/Landing" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="StateMachine/HeavyKick" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="StateMachine/SpecialMove State" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="StateMachine/Dashing" method="_on_animation_tree_animation_finished"]
+[connection signal="animation_finished" from="AnimationTree" to="StateMachine/Skrrt" method="_on_animation_tree_animation_finished"]
 [connection signal="timeout" from="StateMachine/Ground/dash_timer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Ground/dash_timer" to="StateMachine/Ground" method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Ground/dash_again_timer" to="." method="_on_dash_again_timer_timeout"]
 [connection signal="timeout" from="StateMachine/Ground/dash_again_timer" to="StateMachine/Ground" method="_on_dash_again_timer_timeout"]
+[connection signal="timeout" from="StateMachine/Hit/StunTimer" to="StateMachine/Hit" method="_on_stun_timer_timeout"]

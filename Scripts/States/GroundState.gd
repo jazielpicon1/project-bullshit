@@ -3,12 +3,12 @@ extends State
 class_name GroundState
 
 #All the variables you will see and be able to change in the inspector tab
-@export var HeavyKick : State
-@export var jumpVelocity : float = -900.0
+@export var jumpVelocity : float = -1500.0
 @export var air_state : State
 @export var crouching_state : State
 @export var dead_state : State
 @export var dash_state : State
+@export var hit_state : State
 @export var playerID = 1
 @export var health: Health
 @export var specialMove_state : State
@@ -19,13 +19,16 @@ var dashing : bool = false
 var can_dash = true
 var isBlocking : bool = false
 var isCrouching : bool = false
+var isHit : bool = false
 var timer : Timer
 enum {Punch, Kick, Right, Left, Down}
+enum {light_attack, heavy_attack, special_move}
 var Sequence : Array = []
 var names : Array = MoveSetManager.karateManMoves.keys()
 
 func on_enter():
 	isCrouching = false
+	isHit = false 
 
 
 func state_input(event : InputEvent):
@@ -45,7 +48,7 @@ func state_input(event : InputEvent):
 		return
 	if not event.is_pressed():
 		return
-	#Adds all the input from the player in to a input buffer system
+	#Adds all the input from the player into a input buffer system
 	if event.is_action_pressed("Down_%s" % [playerID]):
 		add_input_to_sequence(Down)
 	elif event.is_action_pressed("Right_%s" % [playerID]):
@@ -132,7 +135,6 @@ func check_sequence()->void:
 			print("Special Move: ", Name)
 			$LightPunchSfx.stop()
 			$HeavyPunchSfx.stop()
-			$KarateLungeSuccessNoise.play()
 			if Name == "Karate Lunge" or Name == "Karate Lunge Reversed":
 				playback.travel("Karate Man animations_karate lunge")
 				next_state = specialMove_state
@@ -153,11 +155,13 @@ func check_sequence()->void:
 
 #Handles the processes that occur once a hitbox enter a hurtbox(i.e playing the hurt animation, receiving damage, etc)
 func _on_hurtbox_area_entered(hitbox: Hitbox) -> void:
-	if hitbox != null and isBlocking != true and isCrouching != true:
+	if hitbox != null and isBlocking != true and isCrouching != true and isHit != true:
+		isHit = true
 		print("Damage Taken: ", hitbox.damage)
 		health.health -= hitbox.damage
 		health.set_health(health.health - hitbox.damage)
 		playback.travel("Karate Man animations_hurt-light_standing")
+		next_state = hit_state
 	elif isBlocking == true:
 		var newDamage = 0
 		health.health -= newDamage

@@ -17,6 +17,7 @@ func on_area_entered(hitbox: Hitbox) -> void:
 		owner.take_damage(hitbox.damage)
 	print("ouch")
 	$GettingHitNoise.play()
+	$PunchingNoise.play()
 	
 	
 	#Reminder to change collision mask when there is two players on the screen

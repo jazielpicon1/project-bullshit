@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var state_machine: StateMachine = $StateMachine
 @onready var healthbar = $Heathbar
 #All the variables you will see and be able to change in the inspector tab
-@export var maxSpeed : float = 200.0
+@export var maxSpeed : float = 300.0
 @export var jumpVelocity : float = -900.0
 @export var dash_speed : float = 500.0
 @export var playerID = 1
@@ -15,7 +15,7 @@ extends CharacterBody2D
 #@export var health: Health
 
 #Regular Degular variables
-var gravity = 2200
+var gravity = 3000
 var animation_locked : bool = false
 var attack_animation : bool = false
 var direction : Vector2 = Vector2.ZERO
@@ -99,5 +99,5 @@ func resume_motion():
 
 
 
-func _on_hurtbox_area_entered(area: Area2D) -> void:
+func _on_hurtbox_area_entered(hitbox: Hitbox) -> void:
 	healthbar.health = health.health
