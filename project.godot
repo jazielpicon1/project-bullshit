@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Project Bullshit"
 run/main_scene="uid://c8othrpx2ttlo"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 
 [audio]
 

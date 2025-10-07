@@ -3,7 +3,7 @@ extends State
 class_name GroundState
 
 #All the variables you will see and be able to change in the inspector tab
-@export var jumpVelocity : float = -1500.0
+@export var jumpVelocity : float = -1600.0
 @export var air_state : State
 @export var crouching_state : State
 @export var dead_state : State

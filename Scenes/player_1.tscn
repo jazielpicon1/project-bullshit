@@ -3146,6 +3146,8 @@ transitions = ["Start", "Walk", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-716.022, 181.882)
 
 [node name="Player1" type="CharacterBody2D" node_paths=PackedStringArray("current_state", "dash_state", "health") groups=["Player1", "States"]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_c4k0l")
 current_state = NodePath("StateMachine/Ground")
 dash_state = NodePath("StateMachine/Dashing")
@@ -3154,6 +3156,14 @@ health = NodePath("Health")
 [node name="Health" type="Node" parent="."]
 script = ExtResource("2_qo81y")
 metadata/_custom_type_script = "uid://cefplywomulbq"
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(108, 505)
+scale = Vector2(5, 5)
+target_position = Vector2(1, 22.400002)
+collision_mask = 2
+hit_from_inside = true
+collide_with_areas = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(100, 300)
@@ -3191,6 +3201,7 @@ position = Vector2(108, 321.5)
 shape = SubResource("RectangleShape2D_2aarq")
 
 [node name="GettingHitNoise" type="AudioStreamPlayer2D" parent="AnimatedSprite2D/Hurtbox"]
+position = Vector2(-16, 29)
 stream = ExtResource("162_2aarq")
 bus = &"Sfx"
 
@@ -3228,21 +3239,26 @@ health = NodePath("../../Health")
 specialMove_state = NodePath("../SpecialMove State")
 
 [node name="KarateLungeSuccessNoise" type="AudioStreamPlayer2D" parent="StateMachine/Ground"]
+position = Vector2(-19, 13)
 stream = ExtResource("88_xvfab")
 bus = &"Sfx"
 
 [node name="LightPunchSfx" type="AudioStreamPlayer2D" parent="StateMachine/Ground"]
+position = Vector2(-30, 12)
 stream = ExtResource("83_xeul7")
 bus = &"Sfx"
 
 [node name="KarateLungeSfx" type="AudioStreamPlayer2D" parent="StateMachine/Ground"]
+position = Vector2(-27, 27)
 stream = ExtResource("84_th1ls")
 bus = &"Sfx"
 
 [node name="HeavyKickSfx" type="AudioStreamPlayer2D" parent="StateMachine/Ground"]
+position = Vector2(-39, 21)
 stream = ExtResource("85_nch0q")
 
 [node name="HeavyPunchSfx" type="AudioStreamPlayer2D" parent="StateMachine/Ground"]
+position = Vector2(-42, 13)
 stream = ExtResource("86_dau7q")
 
 [node name="dash_timer" type="Timer" parent="StateMachine/Ground"]
@@ -3318,13 +3334,15 @@ offset_top = 39.0
 offset_right = 246.0
 offset_bottom = 59.0
 
-[connection signal="area_entered" from="AnimatedSprite2D/MeleeHitbox" to="." method="_on_heavykick_hitbox_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/MeleeHitbox" to="." method="_on_melee_hitbox_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite2D/MeleeHitbox" to="." method="_on_heavykick_hitbox_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/MeleeHitbox" to="AnimatedSprite2D/MeleeHitbox" method="_on_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/Hurtbox" to="StateMachine/Ground" method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/Hurtbox" to="StateMachine/Crouching" method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/Hurtbox" to="StateMachine/Hit" method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="AnimatedSprite2D/Hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="body_exited" from="AnimatedSprite2D/Hurtbox" to="." method="_on_hurtbox_body_exited"]
 [connection signal="animation_finished" from="AnimationTree" to="." method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="StateMachine/Landing" method="_on_animation_tree_animation_finished"]
 [connection signal="animation_finished" from="AnimationTree" to="StateMachine/HeavyKick" method="_on_animation_tree_animation_finished"]
