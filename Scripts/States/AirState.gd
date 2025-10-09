@@ -7,6 +7,7 @@ class_name AirState
 
 func state_process(delta):
 	if(character.is_on_floor()):
+		playback.travel("Karate Man animations_jump-end")
 		next_state = landing_state
 	
 func state_input(event : InputEvent):

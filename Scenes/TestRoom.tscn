@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=4 uid="uid://dqlq6niwh71ul"]
+[gd_scene load_steps=9 format=4 uid="uid://d3dyok7ue81il"]
 
-[ext_resource type="Texture2D" uid="uid://cy4dvkyufdji" path="res://assets/Stages/training stage 3.0.jpg" id="1_tumq0"]
-[ext_resource type="PackedScene" uid="uid://cwcu54gcbtjdl" path="res://Scenes/player_1.tscn" id="2_k5f4k"]
+[ext_resource type="Texture2D" uid="uid://cy4dvkyufdji" path="res://assets/Stages/training stage 3.0.jpg" id="1_mdeio"]
+[ext_resource type="Script" uid="uid://cn6ptqpfo258b" path="res://Scripts/test_room.gd" id="1_q6l42"]
+[ext_resource type="PackedScene" uid="uid://cwcu54gcbtjdl" path="res://Scenes/player_1.tscn" id="2_q6l42"]
+[ext_resource type="PackedScene" uid="uid://pnn1ct7pf8c0" path="res://Scenes/pause_menu.tscn" id="4_wtyfb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k5f4k"]
 distance = 1.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k5f4k"]
-texture = ExtResource("1_tumq0")
+texture = ExtResource("1_mdeio")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -6247,7 +6249,9 @@ sources/0 = SubResource("TileSetAtlasSource_k5f4k")
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_6phgx"]
 distance = -662.0
 
-[node name="Level" type="Node2D"]
+[node name="TestRoom" type="Node2D"]
+scale = Vector2(1.00583, 1.01358)
+script = ExtResource("1_q6l42")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(0, 350)
@@ -6282,8 +6286,8 @@ z_index = -2
 use_parent_material = true
 tile_set = SubResource("TileSet_6phgx")
 
-[node name="Player1" parent="." instance=ExtResource("2_k5f4k")]
-position = Vector2(218, 71)
+[node name="Player1" parent="." instance=ExtResource("2_q6l42")]
+position = Vector2(125.27, 220.999)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(702.5, 225)
@@ -6297,5 +6301,8 @@ position = Vector2(50, 0)
 rotation = -1.5708
 shape = SubResource("WorldBoundaryShape2D_6phgx")
 debug_color = Color(0.824268, 0.00163779, 0.95752, 0.42)
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_wtyfb")]
+visible = false
 
 [connection signal="tree_exited" from="." to="Player1" method="_on_level_tree_exited"]

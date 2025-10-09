@@ -1,8 +1,37 @@
 extends Control
 
 @onready var mainbanner = $TextureRect
+@onready var options_menu = $options_menu as OptionsMenu
 #@onready var background = %mm_bg
+
+#func resumefrommenu():   #set up to resume when game select
+	#get_tree().paused = false
+	
+			
+		
+		
+	
+
+
+	
 
 func _ready() -> void:
 	#mainbanner.visible = true
-	pass
+	$CenterContainer/VBoxContainer/MarginContainer/VBoxContainer/mm_campaign.grab_focus()
+	get_tree().paused = false
+
+func _on_mm_quit_pressed() -> void:
+	get_tree().quit()
+
+
+func _on_mm_sandbox_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/TestRoom.tscn")
+	
+
+	
+	
+	
+	
+func _on_mm_options_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/options_menu.tscn")
+	

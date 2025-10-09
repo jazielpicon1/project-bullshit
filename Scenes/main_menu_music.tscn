@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfpy3wf5yiyon"]
+
+[ext_resource type="Script" uid="uid://t5kogjcqoglc" path="res://Scripts/main_menu_music.gd" id="1_qxwqd"]
+[ext_resource type="AudioStream" uid="uid://cgem505ly1vbp" path="res://Sounds/Plok! SNES Music - Beach.mp3" id="2_qxwqd"]
+
+[node name="MainMenuMusic" type="Node"]
+script = ExtResource("1_qxwqd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qxwqd")
+volume_db = -12.702
+autoplay = true
+bus = &"Music"

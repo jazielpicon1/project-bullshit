@@ -3,9 +3,15 @@ extends State
 class_name GroundState
 
 @export var HeavyKick : State
-@export var jumpVelocity : float = -500.0
+@export var jumpVelocity : float = -900.0
 @export var air_state : State
 @export var crouching_state : State
+var timer : Timer
+enum {Punch, Kick, Right, Left, Down}
+var Sequence : Array = []
+var names : Array = MoveSetManager.karateManMoves.keys()
+@export var specialMove_state : State
+
 
 func state_input(event : InputEvent):
 	#Handles the jump animation.
@@ -16,7 +22,20 @@ func state_input(event : InputEvent):
 		get_input()
 	if(event.is_action_pressed("Crouch")):
 		crouch()
-			
+	if not event is InputEventKey:
+		return
+	if not event.is_pressed():
+		return
+	if event.is_action_pressed("Down"):
+		add_input_to_sequence(Down)
+	elif event.is_action_pressed("Right"):
+		add_input_to_sequence(Right)
+	elif event.is_action_pressed("Punch"):
+		add_input_to_sequence(Punch)
+	elif event.is_action_pressed("Left") and character.scale.x >= -0.2:
+		add_input_to_sequence(Right)
+	timer.start()
+	check_sequence()	
 
 func jump():
 	character.velocity.y = jumpVelocity
@@ -58,9 +77,36 @@ func get_input():
 		return
 		
 		
-		
-		
 
+func _on_timeout():
+	print("You suck")
+	Sequence = []
+
+func _ready() -> void:
+	timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = 1
+	timer.one_shot = true
+	timer.timeout.connect(_on_timeout)
+
+func add_input_to_sequence(button : int):
+	Sequence.push_back(button)
+	
+
+func check_sequence()->void:
+	for Name in names:
+		var combo:Array = MoveSetManager.karateManMoves[Name] #Give sequence of current Combo
+		var trim: = Sequence.duplicate() #next steps would alter original sequence
+		trim.reverse() #Because need to leave last entries
+		trim.resize(combo.size()) #Trim to last needed count of entries
+		trim.reverse() #return to right order
+		if trim == combo: #Combo match
+			print("Special Move: ", Name)
+			$KarateLungeSuccessNoise.play()
+			playback.travel("Karate Man animations_karate lunge")
+			next_state = specialMove_state
+			Sequence = [] #clear input sequence
+			return
 
 
 
