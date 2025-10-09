@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cqvdsylb07wbw"]
+[gd_scene load_steps=5 format=3 uid="uid://cqvdsylb07wbw"]
 
 [ext_resource type="PackedScene" uid="uid://i4t1ioj12h0h" path="res://Scenes/audio_slider_settings.tscn" id="1_hn0da"]
 [ext_resource type="PackedScene" uid="uid://wh01io6hpddv" path="res://Scenes/window_mode_button.tscn" id="2_pmc18"]
 [ext_resource type="PackedScene" uid="uid://61rdgpdf1nwm" path="res://Scenes/resolution_mode_button.tscn" id="3_vff0p"]
+[ext_resource type="PackedScene" uid="uid://nrjr1hhv0xgi" path="res://Scenes/hotkey_rebind_button.tscn" id="5_ux2ob"]
 
 [node name="settings_tab_container" type="Control"]
 layout_mode = 3
@@ -24,9 +25,10 @@ offset_bottom = -100.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 
 [node name="Sound" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -87,13 +89,14 @@ theme_override_constants/separation = 64
 alignment = 1
 
 [node name="window_mode_button" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("2_pmc18")]
+process_mode = 0
 layout_mode = 2
 
 [node name="resolution_mode_button" parent="TabContainer/Graphics/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("3_vff0p")]
+process_mode = 0
 layout_mode = 2
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -114,28 +117,44 @@ layout_mode = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Controls/MarginContainer/ScrollContainer"]
 layout_mode = 2
-theme_override_constants/separation = 64
+theme_override_constants/separation = 50
 alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
 layout_mode = 2
-text = "Controls 1"
+theme_override_constants/separation = 8
 
-[node name="Label2" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="Hotkey_Rebind_Button" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("5_ux2ob")]
 layout_mode = 2
-text = "Controls 2"
 
-[node name="Label3" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="Hotkey_Rebind_Button2" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("5_ux2ob")]
 layout_mode = 2
-text = "Controls 3"
+action_name = "Heavy Kick"
 
-[node name="Label4" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="Hotkey_Rebind_Button3" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("5_ux2ob")]
 layout_mode = 2
-text = "Controls 4"
+action_name = "Walk Backwards"
 
-[node name="Label5" type="Label" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+[node name="Hotkey_Rebind_Button4" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("5_ux2ob")]
 layout_mode = 2
-text = "Controls 5"
+action_name = "Heavy Punch"
+
+[node name="Hotkey_Rebind_Button5" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("5_ux2ob")]
+layout_mode = 2
+action_name = "Light Kick"
+
+[node name="Hotkey_Rebind_Button6" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("5_ux2ob")]
+layout_mode = 2
+action_name = "Light Punch"
+
+[node name="Hotkey_Rebind_Button7" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("5_ux2ob")]
+layout_mode = 2
+action_name = "Walk Forward"
+
+[node name="HSeparator2" type="HSeparator" parent="TabContainer/Controls/MarginContainer/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/separation = 8
 
 [node name="Accessibility" type="TabBar" parent="TabContainer"]
 visible = false

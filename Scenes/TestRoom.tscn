@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=4 uid="uid://d3dyok7ue81il"]
+[gd_scene load_steps=10 format=4 uid="uid://d3dyok7ue81il"]
 
 [ext_resource type="Texture2D" uid="uid://cy4dvkyufdji" path="res://assets/Stages/training stage 3.0.jpg" id="1_mdeio"]
 [ext_resource type="Script" uid="uid://cn6ptqpfo258b" path="res://Scripts/test_room.gd" id="1_q6l42"]
 [ext_resource type="PackedScene" uid="uid://cs73ilr7xvmpk" path="res://Scenes/player_1.tscn" id="2_q6l42"]
-[ext_resource type="PackedScene" uid="uid://g2yiaauxibme" path="res://Scenes/player_2.tscn" id="4_wtyfb"]
+[ext_resource type="PackedScene" uid="uid://g2yiaauxibme" path="res://Scenes/player_2.tscn" id="4_ppqey"]
+[ext_resource type="PackedScene" uid="uid://pnn1ct7pf8c0" path="res://Scenes/pause_menu.tscn" id="4_wtyfb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_k5f4k"]
 distance = 1.0
@@ -6287,14 +6288,22 @@ use_parent_material = true
 tile_set = SubResource("TileSet_6phgx")
 
 [node name="Player1" parent="." instance=ExtResource("2_q6l42")]
-position = Vector2(221.707, 202.253)
+position = Vector2(125.27, 220.999)
 
-[node name="Player2" parent="." instance=ExtResource("4_wtyfb")]
-position = Vector2(1049.88, 231.851)
+[node name="Player2" parent="." instance=ExtResource("4_ppqey")]
+position = Vector2(1041.9255, 197.32039)
+scale = Vector2(1.0000001, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(702.5, 225)
 zoom = Vector2(0.82, 0.63)
+
+[node name="PauseMenu" parent="." instance=ExtResource("4_wtyfb")]
+visible = false
+offset_left = -6.0681385e-05
+offset_top = -6.0217408e-05
+offset_right = -6.0681385e-05
+offset_bottom = -6.0217408e-05
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(693, 556)

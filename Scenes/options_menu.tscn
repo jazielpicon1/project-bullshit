@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d18303p1bw5nd" path="res://Scripts/options_menu.gd" id="1_plplt"]
 [ext_resource type="FontFile" uid="uid://brjiqd3qv04ix" path="res://assets/ui/fonts/RubikMonoOne-Regular.ttf" id="2_uj0ok"]
-[ext_resource type="PackedScene" uid="uid://cqvdsylb07wbw" path="res://Scenes/settings_tab_container.tscn" id="3_l1wg4"]
+[ext_resource type="PackedScene" uid="uid://cqvdsylb07wbw" path="res://Scripts/settings_tab_container.tscn" id="3_l1wg4"]
 
 [node name="OptionsMenu" type="Control"]
 layout_mode = 3
@@ -38,10 +38,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="settings_tab_container" parent="MarginContainer/VBoxContainer" instance=ExtResource("3_l1wg4")]
+process_mode = 3
 layout_mode = 2
 size_flags_vertical = 3
 
 [node name="op_exit" type="Button" parent="MarginContainer/VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8

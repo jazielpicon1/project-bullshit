@@ -235,10 +235,10 @@
 [ext_resource type="Texture2D" uid="uid://dm65tk5nboehc" path="res://assets/karate_man/km_win-14.png" id="215_mfm55"]
 [ext_resource type="Texture2D" uid="uid://buhseaqx6p53" path="res://assets/karate_man/km_win-15.png" id="216_s4pky"]
 [ext_resource type="AudioStream" uid="uid://babx3hxjvpjom" path="res://Sounds/sfx/Kamen Rider Punch 3.mp3" id="218_fiymn"]
-[ext_resource type="Script" uid="uid://dfy13jyswwuax" path="res://Scenes/dashing.gd" id="234_qhqg5"]
-[ext_resource type="Script" uid="uid://cswwhtwddpk7l" path="res://Scenes/skrrtState.gd" id="236_lk10v"]
+[ext_resource type="Script" uid="uid://dfy13jyswwuax" path="res://Scripts/dashing.gd" id="234_qhqg5"]
+[ext_resource type="Script" uid="uid://cswwhtwddpk7l" path="res://Scripts/skrrtState.gd" id="236_lk10v"]
 [ext_resource type="PackedScene" uid="uid://dpdd1aopkvgo7" path="res://Scenes/heathbar.tscn" id="236_osylr"]
-[ext_resource type="Script" uid="uid://c8h1e4n16ul37" path="res://Scenes/hitState.gd" id="237_ianya"]
+[ext_resource type="Script" uid="uid://c8h1e4n16ul37" path="res://Scripts/States/hitState.gd" id="237_ianya"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kfbq2"]
 animations = [{
@@ -3334,8 +3334,8 @@ offset_top = 39.0
 offset_right = 246.0
 offset_bottom = 59.0
 
-[connection signal="area_entered" from="AnimatedSprite2D/MeleeHitbox" to="." method="_on_melee_hitbox_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/MeleeHitbox" to="." method="_on_heavykick_hitbox_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite2D/MeleeHitbox" to="." method="_on_melee_hitbox_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/MeleeHitbox" to="AnimatedSprite2D/MeleeHitbox" method="_on_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/Hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/Hurtbox" to="StateMachine/Ground" method="_on_hurtbox_area_entered"]

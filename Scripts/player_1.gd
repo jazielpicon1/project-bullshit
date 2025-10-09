@@ -87,7 +87,7 @@ func _physics_process(delta):
 func push_other_character(other_character: CharacterBody2D, collision_normal: Vector2):
 	# Determine the direction of the push
 	var push_direction = -collision_normal
-	var push_force = 10000000 # Adjust this value for desired pushing strength
+	var push_force = 100 # Adjust this value for desired pushing strength
 	# Apply the force to the other CharacterBody2D's velocity
 	other_character.velocity += push_direction * push_force
 

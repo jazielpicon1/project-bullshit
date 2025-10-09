@@ -13,6 +13,7 @@
 shader = ExtResource("1_36fdp")
 
 [node name="Titlemenu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -173,7 +174,7 @@ theme_override_fonts/font = ExtResource("4_cqq1g")
 theme_override_font_sizes/font_size = 50
 text = "PRESS ANY BUTTON TO START"
 
-[node name="options_menu" parent="." instance=ExtResource("8_w1p8k")]
+[node name="OptionsMenu" parent="." instance=ExtResource("8_w1p8k")]
 visible = false
 layout_mode = 1
 
